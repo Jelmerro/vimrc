@@ -6,7 +6,7 @@
 
 # packages that are required system-wide for development and for use in vim
 system_packages=(node npm pip3 python3 vim)
-# highly recommended system packages are: rg fzf powerline
+# highly recommended system packages are: rg fzf
 
 # pip linting packages installed into ~/.local
 pip_packages=(autopep8 flake8 jedi pylint rope)
@@ -84,6 +84,7 @@ vim_plugins=(
     editorconfig/editorconfig-vim
     digitaltoad/vim-pug
     honza/vim-snippets
+    itchyny/lightline.vim
     junegunn/fzf
     junegunn/fzf.vim
     "neoclide/coc.nvim release"

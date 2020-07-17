@@ -37,6 +37,8 @@ let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'js=javascript', 'pyt
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
+" always show lightline as the statusline without showing the mode a second time
+set laststatus=2 noshowmode
 
 " Keybindings
 " exit insert mode from terminal with normal keystrokes
@@ -63,8 +65,9 @@ nmap <silent> gn <Plug>(coc-rename)"
 function! s:format_code()
     if index(['javascript','vue'], &filetype) >= 0
         call CocAction('runCommand', 'eslint.executeAutofix')
+    else
+        call CocAction('format')
     endif
-    call CocAction('format')
 endfunction
 noremap <silent> <space>f :call <SID>format_code()<cr>
 " always show signcolumn to prevent flashes
@@ -132,7 +135,3 @@ function! s:markdown_preview()
     silent! InstantMarkdownPreview
 endfunction
 command MD call s:markdown_preview()
-
-" Powerline (always show a fancy statusline, without showing mode below it)
-set laststatus=2 noshowmode
-silent! python3 from powerline.vim import setup;setup();del setup

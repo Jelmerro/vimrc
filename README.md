@@ -42,7 +42,6 @@ Linters and Vim plugins ARE installed by the `install.sh` script.
 
 - FZF (fzf) - for using any kind of fuzzy search commands, such as :Files
 - Ripgrep (rg) - for using the :Rg command to fuzzy search file contents
-- Powerline (powerline) - for a vastly better statusline
 
 # Install
 
@@ -67,7 +66,7 @@ but all linters and plugins will be installed by the script to these locations:
 - Show line numbers, end of line and recommended code width
 - Store all vim swap and backup files in ~/.vim/backup
 - More direct feedback using search highlighting, wildmenu, showcmd and such
-- Always show the statusline using powerline
+- Always show the statusline using lightline
 
 ## Plugins
 
@@ -162,6 +161,7 @@ see the UNLICENSE file for more details.
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
+[itchyny/lightline.vim](https://github.com/itchyny/lightline.vim),
 [junegunn/fzf](https://github.com/junegunn/fzf),
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
@@ -196,5 +196,4 @@ see the UNLICENSE file for more details.
 ## Other
 
 [ripgrep](https://github.com/BurntSushi/ripgrep),
-[rupza](https://github.com/felipesousa/rupza),
-[powerline](https://github.com/powerline/powerline)
+[rupza](https://github.com/felipesousa/rupza)
