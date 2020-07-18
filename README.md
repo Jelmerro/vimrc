@@ -10,9 +10,9 @@ vimrc
 - Intelligent autocomplete using COC
 - Linting with eslint, tsserver, flake8 and pylint (including configuration)
 - Improved syntax highlighting for JavaScript, Vue, SCSS and Pug
-- Fuzzy code and file search using FZF
-- Optimized Rupza colorscheme for terminal and GUI
-- Including my minimal vimrc configuration
+- Fuzzy code and file search using FZF and ripgrep
+- One Dark theme everywhere
+- My vimrc to configure all of the above and more
 
 # Supported languages
 
@@ -65,8 +65,8 @@ but all linters and plugins will be installed by the script to these locations:
 - Default to 4 spaces for all files, unless overwritten by Editorconfig
 - Show line numbers, end of line and recommended code width
 - Store all vim swap and backup files in ~/.vim/backup
+- Enable fenced markdown languages and the matchit plugin
 - More direct feedback using search highlighting, wildmenu, showcmd and such
-- Always show the statusline using lightline
 
 ## Plugins
 
@@ -109,6 +109,15 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 - Use commands such as :Files or :Rg to fuzzy search code, text or file names
 
+### One Dark
+
+- Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
+
+### Suda
+
+- Allows you to save files that are owned by root
+- Opens a copy and asks for sudo user password confirmation on write
+
 ### TComment
 
 In normal or visual mode, these keybindings can be used:
@@ -117,14 +126,27 @@ In normal or visual mode, these keybindings can be used:
 - g> - add comment markers (will add a second marker if already present)
 - g< - remove comment markers (will do nothing if missing)
 
+### Vim Airline
+
+- Themed statusline with limited extensions loaded, including COC and venv
+
 ### Vim Fugitive
 
-- Use commands such as :Gblame or :Gdiffsplit to access git within Vim
+- Use many commands such as :Gblame or :Gdiffsplit to access git within Vim
+
+### Vim Illuminate
+
+- Automatically highlights the same words in a relatively light gray color
 
 ### Vim Instant Markdown
 
 - The preview won't open automatically
 - Open the preview with the custom :MD command
+
+### Vim Snippets
+
+- A collection of snippets that will be suggested by COC
+- Use the Tab key to expand the highlighted snippet
 
 # Uninstall
 
@@ -135,12 +157,10 @@ When uninstalling, the `uninstall.sh` script will do the following:
 
 # License
 
-The rupza.vim file was originally created by Felipe Sousa.
-The file header text includes the MIT license and terms of usage.
-
-ALL other files in this repository are created by Jelmer van Arnhem.
+ALL files in this repository are created by Jelmer van Arnhem.
 You can copy, share and modify them without limitation,
 see the UNLICENSE file for more details.
+The referenced projects are covered by different licenses, check them out below.
 
 # Links to all referenced projects
 
@@ -151,19 +171,17 @@ see the UNLICENSE file for more details.
 [eslint](https://github.com/eslint/eslint),
 [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue),
 [instant-markdown-d](https://github.com/suan/instant-markdown-d),
-[jedi](https://github.com/davidhalter/jedi),
 [flake8](https://gitlab.com/pycqa/flake8),
-[pylint](https://github.com/PyCQA/pylint),
-[rope](https://github.com/python-rope/rope)
+[pylint](https://github.com/PyCQA/pylint)
 
 ## Vim plugins
 
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
-[itchyny/lightline.vim](https://github.com/itchyny/lightline.vim),
-[junegunn/fzf](https://github.com/junegunn/fzf),
+[joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
+[lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
 [posva/vim-vue](https://github.com/posva/vim-vue),
@@ -171,6 +189,7 @@ see the UNLICENSE file for more details.
 [suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown),
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive),
+[vim-airline/vim-airline](https://github.com/vim-airline/vim-airline),
 [vim-ide/scss-syntax.vim](https://github.com/vim-ide/scss-syntax.vim)
 
 ## CoC extensions
@@ -195,5 +214,5 @@ see the UNLICENSE file for more details.
 
 ## Other
 
-[ripgrep](https://github.com/BurntSushi/ripgrep),
-[rupza](https://github.com/felipesousa/rupza)
+[fzf](https://github.com/junegunn/fzf),
+[ripgrep](https://github.com/BurntSushi/ripgrep)

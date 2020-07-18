@@ -9,7 +9,7 @@ system_packages=(node npm pip3 python3 vim)
 # highly recommended system packages are: rg fzf
 
 # pip linting packages installed into ~/.local
-pip_packages=(autopep8 flake8 jedi pylint rope)
+pip_packages=(autopep8 flake8 pylint)
 
 # npm linting packages installed into ~/.local
 npm_packages=(
@@ -57,11 +57,13 @@ coc_settings='{
         "bash": {
             "args": ["start"],
             "command": "bash-language-server",
-            "filetypes": ["sh"],
+            "filetypes": ["bash", "sh"],
             "ignoredRootPaths": []
         }
     },
+    "python.jediEnabled": false,
     "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         "--disable=C0103",
         "--disable=C0112",
@@ -84,9 +86,10 @@ vim_plugins=(
     editorconfig/editorconfig-vim
     digitaltoad/vim-pug
     honza/vim-snippets
-    itchyny/lightline.vim
+    joshdick/onedark.vim
     junegunn/fzf
     junegunn/fzf.vim
+    lambdalisue/suda.vim
     "neoclide/coc.nvim release"
     pangloss/vim-javascript
     posva/vim-vue
@@ -94,6 +97,7 @@ vim_plugins=(
     suan/vim-instant-markdown
     tomtom/tcomment_vim
     tpope/vim-fugitive
+    vim-airline/vim-airline
     vim-ide/scss-syntax.vim
 )
 
@@ -176,8 +180,6 @@ setup() {
     cd $scriptdir
     cp .eslintrc.json ~
     cp vimrc ~/.vim/vimrc
-    mkdir -p ~/.vim/colors
-    cp rupza.vim ~/.vim/colors
     title "Done"
 }
 

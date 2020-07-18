@@ -14,9 +14,6 @@ set tabstop=4 shiftwidth=4 expandtab
 set list
 " color column for optimal line length
 set colorcolumn=80
-" use rupza colorscheme with gui colors in the terminal
-colorscheme rupza
-set termguicolors
 " display line numbers
 set number
 " enable auto indentation
@@ -37,8 +34,6 @@ let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'js=javascript', 'pyt
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
-" always show lightline as the statusline without showing the mode a second time
-set laststatus=2 noshowmode
 
 " Keybindings
 " exit insert mode from terminal with normal keystrokes
@@ -53,6 +48,12 @@ set backspace=indent,eol,start
 set showcmd
 " maximize the current window split (undo with the default <C-w>= binding)
 noremap <C-w>m <C-w>500><C-w>500+
+
+" Airline
+" always show airline as the statusline without showing the mode a second time
+set laststatus=2 noshowmode
+" only enable relevant extensions
+let g:airline_extensions=['coc', 'fugitiveline', 'netrw', 'term', 'virtualenv']
 
 " COC (code suggestions, diagnostics and refactoring)
 " find or update definitions
@@ -112,6 +113,36 @@ imap <expr> <C-b> <SID>scroll_cursor_popup(-1) ? '' : ''
 " expand snippet suggestion
 imap <silent> <S-Tab> <Plug>(coc-snippets-expand)
 imap <silent> <Tab> <Plug>(coc-snippets-expand)
+
+" FZF
+" match the theme's colorscheme in the fzf windows
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Onedark theme
+" load and use the onedark theme
+packadd! onedark.vim
+colorscheme onedark
+" enable gui colors in the terminal, which looks nicer if supported
+set termguicolors
+" show illuminated words in relatively light gray
+hi illuminatedWord guibg=#444444 ctermbg=238
+
+" Suda
+" automatically open root owned files with sudo
+let g:suda_smart_edit=1
 
 " TComment
 " don't set the default bindings
