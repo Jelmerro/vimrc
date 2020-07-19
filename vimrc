@@ -6,12 +6,20 @@
 
 " General
 " ignore and reset distro specific configurations
-set all& runtimepath=~/.vim,$VIMRUNTIME packpath=~/.vim,$VIMRUNTIME
+set all&
+set runtimepath=~/.vim,$VIMRUNTIME
+set packpath=~/.vim,$VIMRUNTIME
 set nocompatible
 " always use 4 spaces as the default
-set tabstop=4 shiftwidth=4 expandtab
-" show the end of the line as a $ sign
+set tabstop=4
+set shiftwidth=4
+set expandtab
+" show tabs and other special characters as escaped sequences
 set list
+set listchars=tab:⮕\ ,trail:◼,nbsp:•,extends:…,precedes:…
+" highlight the current line number
+set cursorline
+set cursorlineopt=number
 " color column for optimal line length
 set colorcolumn=80
 " display line numbers
@@ -20,13 +28,16 @@ set number
 set autoindent
 " set the .swp and backup file location to ~/.vim/backup
 call mkdir(expand("~/.vim/backup/"), "p")
-set backupdir=~/.vim/backup// directory=~/.vim/backup// undodir=~/.vim/backup//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/backup//
+set undodir=~/.vim/backup//
 " reduce update time for swap
 set updatetime=300
 " show command suggestions at the position of the statusline
 set wildmenu
 " show and highlight search results when typing
-set hlsearch incsearch
+set hlsearch
+set incsearch
 " indent wrapped lines the same as the start of the line
 set breakindent
 " highlight code snippets in markdown files
@@ -34,12 +45,15 @@ let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'js=javascript', 'pyt
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
+" don't keep netrw hist files
+let g:netrw_dirhistmax=0
 
 " Keybindings
 " exit insert mode from terminal with normal keystrokes
 tnoremap <Esc> <C-\><C-n>
 " toggle line wrap with shift-w
-noremap <silent> <S-W> :set wrap!<cr>
+set nowrap
+noremap <silent> W :set wrap!<cr>
 " remove visual mode escape delay
 set ttimeoutlen=0
 " allow backspace to remove characters while inserting
@@ -51,7 +65,8 @@ noremap <C-w>m <C-w>500><C-w>500+
 
 " Airline
 " always show airline as the statusline without showing the mode a second time
-set laststatus=2 noshowmode
+set laststatus=2
+set noshowmode
 " only enable relevant extensions
 let g:airline_extensions=['coc', 'fugitiveline', 'netrw', 'term', 'virtualenv']
 
@@ -131,6 +146,16 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" Instant Markdown
+" disable autostart when opening a file
+let g:instant_markdown_autostart=0
+" Add a single startup command that also can also restart
+function! s:markdown_preview()
+    silent! InstantMarkdownStop
+    silent! InstantMarkdownPreview
+endfunction
+command MD call s:markdown_preview()
+
 " Onedark theme
 " load and use the onedark theme
 packadd! onedark.vim
@@ -139,6 +164,9 @@ colorscheme onedark
 set termguicolors
 " show illuminated words in relatively light gray
 hi illuminatedWord guibg=#444444 ctermbg=238
+" show special characters in cyan
+hi NonText guifg=#00cccc ctermfg=44
+hi SpecialKey guifg=#00cccc ctermfg=44
 
 " Suda
 " automatically open root owned files with sudo
@@ -156,13 +184,3 @@ function! s:TCommentSpecial(mode)
 endfunction
 noremap <silent> g> :call <SID>TCommentSpecial("C")<cr>
 noremap <silent> g< :call <SID>TCommentSpecial("U")<cr>
-
-" Vim Instant Markdown
-" disable autostart when opening a file
-let g:instant_markdown_autostart=0
-" Add a single startup command that also can also restart
-function! s:markdown_preview()
-    silent! InstantMarkdownStop
-    silent! InstantMarkdownPreview
-endfunction
-command MD call s:markdown_preview()

@@ -102,36 +102,20 @@ vim_plugins=(
 )
 
 # show colorful titles for installation steps
-title() {
-    echo -e "\n\x1b[31m === \x1b[32m$1\x1b[0m\n"
-}
-subtitle() {
-    echo -e "\n\x1b[31m - \x1b[33m$1\x1b[0m\n"
-}
+title() { echo -e "\n\x1b[31m === \x1b[32m$1\x1b[0m\n"; }
+subtitle() { echo -e "\n\x1b[31m - \x1b[33m$1\x1b[0m\n"; }
 
-# install or update a plugin in the vim/pack directory
+# clone and update a plugin in the vim/pack directory
 plugin() {
     subtitle "$1"
-    cd ~/.vim
-    mkdir -p pack/plugins/start
-    cd pack/plugins/start
+    mkdir -p ~/.vim/pack/plugins/start
+    cd ~/.vim/pack/plugins/start
     if [ ! -d $(basename $1) ];then
-        if [[ $1 = http* ]];then
-            git clone $1 $(basename $1)
-        else
-            git clone https://github.com/$1 $(basename $1)
-        fi
-        if [ $2 ];then
-            cd $(basename $1)
-            git checkout $2
-        fi
-    else
-        cd $(basename $1)
-        if [ $2 ];then
-            git checkout $2
-        fi
-        git pull --all
+        git clone https://github.com/$1
     fi
+    cd $(basename $1)
+    git checkout $2
+    git pull --all
 }
 
 # store the current script location directory to copy the config files from
@@ -160,7 +144,6 @@ setup() {
     if [[ $1 = clean ]];then
         rm -rf ~/.vim ~/.config/coc
     fi
-    mkdir -p ~/.vim/
     # install plugins
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
@@ -170,9 +153,7 @@ setup() {
     title "Install/update COC extensions"
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc/extensions
-    if [ ! -f package.json ];then
-        echo '{"dependencies":{}}' > package.json
-    fi
+    echo '{"dependencies":{}}' > package.json
     npm i ${coc_packages[@]} --ignore-scripts --no-package-lock --only=prod
     echo $coc_settings > ~/.vim/coc-settings.json
     # copy setting files

@@ -63,7 +63,7 @@ but all linters and plugins will be installed by the script to these locations:
 - Distribution independent configuration, system vimrc changes are reset
 - User-only installation, see "Install" for a list of locations
 - Default to 4 spaces for all files, unless overwritten by Editorconfig
-- Show line numbers, end of line and recommended code width
+- Show line numbers, special characters, trailing whitespace and colorcolumn
 - Store all vim swap and backup files in ~/.vim/backup
 - Enable fenced markdown languages and the matchit plugin
 - More direct feedback using search highlighting, wildmenu, showcmd and such
@@ -74,6 +74,10 @@ This is a list of the plugins that are installed to add additional features.
 Changes to the default usage/bindings are listed as well.
 Not all plugins are listed, as some of them are merely to improve the syntax,
 a list of these can be found at the bottom of this readme.
+
+### Airline
+
+- Themed statusline with limited extensions loaded, including COC and venv
 
 ### CoC
 
@@ -109,9 +113,27 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 - Use commands such as :Files or :Rg to fuzzy search code, text or file names
 
+### Fugitive
+
+- Use many commands such as :Gblame or :Gdiffsplit to access git within Vim
+
+### Illuminate
+
+- Automatically highlights the same words in a relatively light gray color
+
+### Instant Markdown
+
+- The preview won't open automatically
+- Open the preview with the custom :MD command
+
 ### One Dark
 
 - Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
+
+### Snippets
+
+- A collection of snippets that will be suggested by COC
+- Use the Tab key to expand the highlighted snippet
 
 ### Suda
 
@@ -125,28 +147,6 @@ In normal or visual mode, these keybindings can be used:
 - gc - toggle comments (add if missing, remove if already present)
 - g> - add comment markers (will add a second marker if already present)
 - g< - remove comment markers (will do nothing if missing)
-
-### Vim Airline
-
-- Themed statusline with limited extensions loaded, including COC and venv
-
-### Vim Fugitive
-
-- Use many commands such as :Gblame or :Gdiffsplit to access git within Vim
-
-### Vim Illuminate
-
-- Automatically highlights the same words in a relatively light gray color
-
-### Vim Instant Markdown
-
-- The preview won't open automatically
-- Open the preview with the custom :MD command
-
-### Vim Snippets
-
-- A collection of snippets that will be suggested by COC
-- Use the Tab key to expand the highlighted snippet
 
 # Uninstall
 
