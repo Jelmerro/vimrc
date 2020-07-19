@@ -184,3 +184,7 @@ function! s:TCommentSpecial(mode)
 endfunction
 noremap <silent> g> :call <SID>TCommentSpecial("C")<cr>
 noremap <silent> g< :call <SID>TCommentSpecial("U")<cr>
+
+" Load plugins and automatically generate helptags for them
+packloadall
+helptags ALL
