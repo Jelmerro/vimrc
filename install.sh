@@ -83,6 +83,7 @@ coc_settings='{
 
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
+    airblade/vim-rooter
     editorconfig/editorconfig-vim
     digitaltoad/vim-pug
     honza/vim-snippets
@@ -90,6 +91,7 @@ vim_plugins=(
     junegunn/fzf
     junegunn/fzf.vim
     lambdalisue/suda.vim
+    mbbill/undotree
     "neoclide/coc.nvim release"
     pangloss/vim-javascript
     posva/vim-vue
@@ -150,7 +152,7 @@ setup() {
         plugin $plug
     done
     # conquer of completion installation steps
-    title "Install/update COC extensions"
+    title "Install/update CoC extensions"
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc/extensions
     echo '{"dependencies":{}}' > package.json

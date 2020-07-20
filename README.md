@@ -7,7 +7,7 @@ vimrc
 
 - Easy to install and expand with other plugins
 - Deterministic configuration, disables any system settings
-- Intelligent autocomplete using COC
+- Intelligent autocomplete using CoC
 - Linting with eslint, tsserver, flake8 and pylint (including configuration)
 - Improved syntax highlighting for JavaScript, Vue, SCSS and Pug
 - Fuzzy code and file search using FZF and ripgrep
@@ -67,6 +67,7 @@ but all linters and plugins will be installed by the script to these locations:
 - Store all vim swap and backup files in ~/.vim/backup
 - Enable fenced markdown languages and the matchit plugin
 - More direct feedback using search highlighting, wildmenu, showcmd and such
+- Leader key is set to the `Space` key
 
 ## Plugins
 
@@ -77,32 +78,32 @@ a list of these can be found at the bottom of this readme.
 
 ### Airline
 
-- Themed statusline with limited extensions loaded, including COC and venv
+- Themed statusline with limited extensions loaded, including CoC and venv
 
 ### CoC
 
 For Conqueror of Completion the following keys are mapped in normal mode:
 
-- gd - jump to definition
-- gy - jump to type definition
-- gi - list and jump to implementation
-- gr - list and jump to references
-- gn - rename at cursor position
-- Space-f - autoformat code
-- Ctrl-k - jump to previous diagnostic
-- Ctrl-j - jump to next diagnostic
-- Shift-k - show CoC documentation or the vim help pages
+- `gd` - jump to definition
+- `gy` - jump to type definition
+- `gi` - list and jump to implementation
+- `gr` - list and jump to references
+- `gn` - rename at cursor position
+- `<leader>f` - autoformat code
+- `<c-k>` - jump to previous diagnostic
+- `<c-j>` - jump to next diagnostic
+- `K` - show CoC documentation or the vim help pages
 
 The signcolumn is also populated by CoC, with all diagnostics displayed as `>>`,
 although each level from hint to error has a different color.
 Git difference is displayed as a single character, such as `+`, `.` or `~`.
 
 This plugin is also used for autocompletion, which will show automatically in insert mode.
-Suggestions are never automatically applied, but you can select them with Ctrl-n and Ctrl-p.
+Suggestions are never automatically applied, but you can select them with `<c-n>` and `<c-p>`.
 You can then immediately continue typing without needing to press anything else.
 The only exception is made for snippets, which do need to be expanded with Tab.
 Unlike other configurations, the Tab key can not be used to modify whitespace,
-with this vimrc we use Vim's regular Ctrl-d and Ctrl-t to do so.
+with this vimrc we use Vim's regular `<c-d>` and `<c-t>` to do so.
 Or `<<` and `>>` to do the same outside of insert mode.
 
 ### Editconfig
@@ -111,7 +112,10 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 ### FZF
 
-- Use commands such as :Files or :Rg to fuzzy search code, text or file names
+- Open the file finder with `<leader>e`
+- Find text in files using ripgreg using `<leader>r`
+- Switch buffers based on filename by pressing `<leader>b`
+- Or use many more commands such as `:GFiles` or `:Commits`
 
 ### Fugitive
 
@@ -130,9 +134,13 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 - Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
 
+### Rooter
+
+- Automatically updates the cwd to the base folder of the project, based on ".git/" and others
+
 ### Snippets
 
-- A collection of snippets that will be suggested by COC
+- A collection of snippets that will be suggested by CoC
 - Use the Tab key to expand the highlighted snippet
 
 ### Suda
@@ -144,9 +152,13 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 In normal or visual mode, these keybindings can be used:
 
-- gc - toggle comments (add if missing, remove if already present)
-- g> - add comment markers (will add a second marker if already present)
-- g< - remove comment markers (will do nothing if missing)
+- `gc` - toggle comments (add if missing, remove if already present)
+- `g>` - add comment markers (will add a second marker if already present)
+- `g<` - remove comment markers (will do nothing if missing)
+
+### Undotree
+
+- Toggle the Undotree with `<leader>u`, which automatically shifts the focus there
 
 # Uninstall
 
@@ -176,6 +188,7 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Vim plugins
 
+[airblade/vim-rooter](https://github.com/airblade/vim-rooter),
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
@@ -183,6 +196,7 @@ The referenced projects are covered by different licenses, check them out below.
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
+[mbbill/undotree](https://github.com/mbbill/undotree),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
 [posva/vim-vue](https://github.com/posva/vim-vue),
 [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate),

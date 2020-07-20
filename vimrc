@@ -30,7 +30,6 @@ set autoindent
 call mkdir(expand("~/.vim/backup/"), "p")
 set backupdir=~/.vim/backup//
 set directory=~/.vim/backup//
-set undodir=~/.vim/backup//
 " reduce update time for swap
 set updatetime=300
 " show command suggestions at the position of the statusline
@@ -62,6 +61,8 @@ set backspace=indent,eol,start
 set showcmd
 " maximize the current window split (undo with the default <C-w>= binding)
 noremap <C-w>m <C-w>500><C-w>500+
+" set leader key to space
+let g:mapleader=" "
 
 " Airline
 " always show airline as the statusline without showing the mode a second time
@@ -70,13 +71,13 @@ set noshowmode
 " only enable relevant extensions
 let g:airline_extensions=['coc', 'fugitiveline', 'netrw', 'term', 'virtualenv']
 
-" COC (code suggestions, diagnostics and refactoring)
+" CoC (code suggestions, diagnostics and refactoring)
 " find or update definitions
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gn <Plug>(coc-rename)"
+nmap <silent> gn <Plug>(coc-rename)
 " autoformat code based on linter
 function! s:format_code()
     if index(['javascript','vue'], &filetype) >= 0
@@ -85,7 +86,7 @@ function! s:format_code()
         call CocAction('format')
     endif
 endfunction
-noremap <silent> <space>f :call <SID>format_code()<cr>
+noremap <silent> <leader>f :call <SID>format_code()<cr>
 " always show signcolumn to prevent flashes
 set signcolumn=yes
 " jump to diagnostics or the documentation
@@ -145,6 +146,9 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+nnoremap <leader>r :Rg<cr>
+nnoremap <leader>e :Files<cr>
+nnoremap <leader>b :Buffers<cr>
 
 " Instant Markdown
 " disable autostart when opening a file
@@ -154,7 +158,7 @@ function! s:markdown_preview()
     silent! InstantMarkdownStop
     silent! InstantMarkdownPreview
 endfunction
-command MD call s:markdown_preview()
+command! MD call s:markdown_preview()
 
 " Onedark theme
 " load and use the onedark theme
@@ -167,6 +171,12 @@ hi illuminatedWord guibg=#444444 ctermbg=238
 " show special characters in cyan
 hi NonText guifg=#00cccc ctermfg=44
 hi SpecialKey guifg=#00cccc ctermfg=44
+
+" Rooter
+" switch the root for: eslint configs, git repos and syncthing folders
+let g:rooter_patterns=['.eslintrc.json', '.git', '.stfolder']
+" Don't print the directory change
+let g:rooter_silent_chdir=1
 
 " Suda
 " automatically open root owned files with sudo
@@ -184,6 +194,12 @@ function! s:TCommentSpecial(mode)
 endfunction
 noremap <silent> g> :call <SID>TCommentSpecial("C")<cr>
 noremap <silent> g< :call <SID>TCommentSpecial("U")<cr>
+
+" Undotree
+" toggle the undo tree easily
+nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
+set undodir=~/.vim/backup//
+set undofile
 
 " Load plugins and automatically generate helptags for them
 packloadall
