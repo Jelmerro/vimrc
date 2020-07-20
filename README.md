@@ -134,6 +134,10 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 - Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
 
+### Reword
+
+- Rename camelCaseWords or snake_case_words all the same with `:Reword`
+
 ### Rooter
 
 - Automatically updates the cwd to the base folder of the project, based on ".git/" and others
@@ -195,6 +199,7 @@ The referenced projects are covered by different licenses, check them out below.
 [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
+[lambdalisue/reword.vim](https://github.com/lambdalisue/reword.vim)
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [mbbill/undotree](https://github.com/mbbill/undotree),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),

@@ -91,6 +91,7 @@ vim_plugins=(
     junegunn/fzf
     junegunn/fzf.vim
     lambdalisue/suda.vim
+    lambdalisue/reword.vim
     mbbill/undotree
     "neoclide/coc.nvim release"
     pangloss/vim-javascript
