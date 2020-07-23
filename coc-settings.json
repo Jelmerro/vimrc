@@ -1,0 +1,44 @@
+{
+    "coc.source.syntax.priority": 1,
+    "diagnostic.enableHighlightLineNumber": false,
+    "diagnostic.errorSign": ">>",
+    "diagnostic.hintSign": ">>",
+    "diagnostic.infoSign": ">>",
+    "diagnostic.warningSign": ">>",
+    "git.addedSign.text": "+",
+    "git.changedSign.text": "~",
+    "git.changeRemovedSign.text": "±",
+    "git.removedSign.text": ".",
+    "git.topRemovedSign.text": "^",
+    "languageserver": {
+        "bash": {
+            "args": [
+                "start"
+            ],
+            "command": "bash-language-server",
+            "filetypes": [
+                "bash",
+                "sh"
+            ],
+            "ignoredRootPaths": []
+        }
+    },
+    "python.jediEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=C0103",
+        "--disable=C0112",
+        "--disable=C0114",
+        "--disable=C0115",
+        "--disable=C0116",
+        "--disable=C0301",
+        "--disable=R0902",
+        "--disable=R0903",
+        "--disable=R0904",
+        "--disable=W0621"
+    ],
+    "python.linting.pylintCategorySeverity.convention": "Hint",
+    "python.linting.pylintUseMinimalCheckers": false,
+    "tailwindCSS.headwind.runOnSave": false
+}

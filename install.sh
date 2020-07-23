@@ -19,68 +19,6 @@ npm_packages=(
     instant-markdown-d@latest
 )
 
-# coc plugin with extensions installed by npm into ~/.config/coc/extensions
-coc_packages=(
-    coc-css@latest
-    coc-dictionary@latest
-    coc-docker@latest
-    coc-emoji@latest
-    coc-eslint@latest
-    coc-git@latest
-    coc-highlight@latest
-    coc-html@latest
-    coc-json@latest
-    coc-markdownlint@latest
-    coc-python@latest
-    coc-snippets@latest
-    coc-syntax@latest
-    coc-tailwindcss@latest
-    coc-tsserver@latest
-    coc-vetur@latest
-    coc-vimlsp@latest
-    coc-word@latest
-    coc-yaml@latest
-)
-coc_settings='{
-    "coc.source.syntax.priority": 1,
-    "diagnostic.enableHighlightLineNumber": false,
-    "diagnostic.errorSign": ">>",
-    "diagnostic.hintSign": ">>",
-    "diagnostic.infoSign": ">>",
-    "diagnostic.warningSign": ">>",
-    "git.addedSign.text": "+",
-    "git.changedSign.text": "~",
-    "git.changeRemovedSign.text": "±",
-    "git.removedSign.text": ".",
-    "git.topRemovedSign.text": "^",
-    "languageserver": {
-        "bash": {
-            "args": ["start"],
-            "command": "bash-language-server",
-            "filetypes": ["bash", "sh"],
-            "ignoredRootPaths": []
-        }
-    },
-    "python.jediEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintArgs": [
-        "--disable=C0103",
-        "--disable=C0112",
-        "--disable=C0114",
-        "--disable=C0115",
-        "--disable=C0116",
-        "--disable=C0301",
-        "--disable=R0902",
-        "--disable=R0903",
-        "--disable=R0904",
-        "--disable=W0621"
-    ],
-    "python.linting.pylintCategorySeverity.convention": "Hint",
-    "python.linting.pylintUseMinimalCheckers": false,
-    "tailwindCSS.headwind.runOnSave": false
-}'
-
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
     airblade/vim-rooter
@@ -104,6 +42,29 @@ vim_plugins=(
     vim-ide/scss-syntax.vim
 )
 
+# coc plugin with extensions installed by npm into ~/.config/coc/extensions
+coc_packages=(
+    coc-css@latest
+    coc-dictionary@latest
+    coc-docker@latest
+    coc-emoji@latest
+    coc-eslint@latest
+    coc-git@latest
+    coc-highlight@latest
+    coc-html@latest
+    coc-json@latest
+    coc-markdownlint@latest
+    coc-python@latest
+    coc-snippets@latest
+    coc-syntax@latest
+    coc-tailwindcss@latest
+    coc-tsserver@latest
+    coc-vetur@latest
+    coc-vimlsp@latest
+    coc-word@latest
+    coc-yaml@latest
+)
+
 # show colorful titles for installation steps
 title() { echo -e "\n\x1b[31m === \x1b[32m$1\x1b[0m\n"; }
 subtitle() { echo -e "\n\x1b[31m - \x1b[33m$1\x1b[0m\n"; }
@@ -121,13 +82,9 @@ plugin() {
     git pull --all
 }
 
-# store the current script location directory to copy the config files from
-scriptdir=$(dirname $(realpath $0))
-
 setup() {
     title "Jelmerro's Vim installation script"
     echo "See https://github.com/Jelmerro/vimrc for info and updates"
-    # check if all the required software is present
     subtitle "Check required system software"
     for software in ${system_packages[@]};do
         which $software
@@ -136,34 +93,33 @@ setup() {
             exit
         fi
     done
-    # install linters for the current user globally into ~/.local folder
+    if [[ $1 = clean ]];then
+        rm -rf ~/.vim ~/.config/coc
+    fi
+    subtitle "Copy config files"
+    mkdir -p ~/.vim/
+    cd $(dirname $(realpath $0))
+    cp .eslintrc.json ~
+    cp vimrc ~/.vim/vimrc
+    cp coc-settings.json ~/.vim/coc-settings.json
+
     title "Install/update linters and parsers"
     subtitle "Pip packages"
     pip3 install --user -U ${pip_packages[@]}
     subtitle "Npm packages"
     npm config set prefix "~/.local"
     npm i -g ${npm_packages[@]}
-    # clean current configuration if requested
-    if [[ $1 = clean ]];then
-        rm -rf ~/.vim ~/.config/coc
-    fi
-    # install plugins
+
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
         plugin $plug
     done
-    # conquer of completion installation steps
+
     title "Install/update CoC extensions"
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc/extensions
     echo '{"dependencies":{}}' > package.json
     npm i ${coc_packages[@]} --ignore-scripts --no-package-lock --only=prod
-    echo $coc_settings > ~/.vim/coc-settings.json
-    # copy setting files
-    title "Copy config files"
-    cd $scriptdir
-    cp .eslintrc.json ~
-    cp vimrc ~/.vim/vimrc
     title "Done"
 }
 
