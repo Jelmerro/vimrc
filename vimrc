@@ -40,7 +40,7 @@ set incsearch
 " indent wrapped lines the same as the start of the line
 set breakindent
 " highlight code snippets in markdown files
-let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'js=javascript', 'python']
+let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascript', 'python']
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
