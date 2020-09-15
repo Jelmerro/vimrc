@@ -138,10 +138,6 @@ Or `<<` and `>>` to do the same outside of insert mode.
 
 - Rename camelCaseWords or snake_case_words all the same with `:Reword`
 
-### Rooter
-
-- Automatically updates the cwd to the base folder of the project, based on ".git/" and others
-
 ### Snippets
 
 - A collection of snippets that will be suggested by CoC
@@ -192,7 +188,6 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Vim plugins
 
-[airblade/vim-rooter](https://github.com/airblade/vim-rooter),
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),

@@ -172,12 +172,6 @@ hi illuminatedWord guibg=#444444 ctermbg=238
 hi NonText guifg=#00cccc ctermfg=44
 hi SpecialKey guifg=#00cccc ctermfg=44
 
-" Rooter
-" switch the root for: eslint configs, git repos and syncthing folders
-let g:rooter_patterns=['.eslintrc.json', '.git', '.stfolder']
-" Don't print the directory change
-let g:rooter_silent_chdir=1
-
 " Suda
 " automatically open root owned files with sudo
 let g:suda_smart_edit=1

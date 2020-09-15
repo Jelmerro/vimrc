@@ -21,7 +21,6 @@ npm_packages=(
 
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
-    airblade/vim-rooter
     editorconfig/editorconfig-vim
     digitaltoad/vim-pug
     honza/vim-snippets
