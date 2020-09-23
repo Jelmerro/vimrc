@@ -68,6 +68,7 @@ but all linters and plugins will be installed by the script to these locations:
 - Enable fenced markdown languages and the matchit plugin
 - More direct feedback using search highlighting, wildmenu, showcmd and such
 - Leader key is set to the `Space` key
+- Indent-based folding that can be toggled with `<leader>t`
 
 ## Plugins
 

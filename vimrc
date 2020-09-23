@@ -63,6 +63,10 @@ set showcmd
 noremap <C-w>m <C-w>500><C-w>500+
 " set leader key to space
 let g:mapleader=" "
+" toggle for indent-based folding and don't apply on file open
+set foldmethod=indent
+set foldlevel=99
+nnoremap <leader>t za
 
 " Airline
 " always show airline as the statusline without showing the mode a second time
