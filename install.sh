@@ -107,7 +107,7 @@ setup() {
     pip3 install --user -U ${pip_packages[@]}
     subtitle "Npm packages"
     npm config set prefix "~/.local"
-    npm i -g ${npm_packages[@]}
+    npm --loglevel=error i --no-audit --no-fund -g ${npm_packages[@]}
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
@@ -118,7 +118,7 @@ setup() {
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc/extensions
     echo '{"dependencies":{}}' > package.json
-    npm i ${coc_packages[@]} --ignore-scripts --no-package-lock --only=prod
+    npm --loglevel=error i --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
     title "Done"
 }
 
