@@ -5,7 +5,7 @@
 # This file is released into the public domain, see UNLICENSE file for details
 
 # packages that are required system-wide for development and for use in vim
-system_packages=(node npm pip3 python3 vim)
+system_packages=(git node npm pip3 python3 vim)
 # highly recommended system packages are: rg fzf
 
 # pip linting packages installed into ~/.local
