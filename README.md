@@ -20,8 +20,8 @@ All languages supported by Vim are supported.
 These are all languages that are (somewhat) enhanced by using this vimrc:
 
 __Bash__, __CSS__, Docker, Handlebars, __HTML__, __JavaScript__, __JSON__, Less,
-__Markdown__, __Python__, Pug, Razor, SCSS, Tailwind, TypeScript, __Vue__, Vim,
-XML, YAML.
+__Markdown__, __Python__, Pug, Razor, Ren'Py, SCSS, Tailwind, TypeScript,
+__Vue__, Vim, XML, YAML.
 
 Languages in __bold__ are the main focus of this vimrc project.
 However, the install script can be easily expanded to change the list of plugins.
@@ -34,6 +34,7 @@ Linters and Vim plugins ARE installed by the `install.sh` script.
 
 ## Required
 
+- Git
 - Vim 8 or higher
 - Python3 with Pip3
 - NodeJS with Npm
@@ -189,13 +190,14 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Vim plugins
 
+[chaimleib/vim-renpy](https://github.com/chaimleib/vim-renpy),
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
-[joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
+[joshdick/onedark.vim](https://github.com/joshdick/onedark.vim),
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
-[lambdalisue/reword.vim](https://github.com/lambdalisue/reword.vim)
+[lambdalisue/reword.vim](https://github.com/lambdalisue/reword.vim),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [mbbill/undotree](https://github.com/mbbill/undotree),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
