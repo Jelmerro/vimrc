@@ -117,7 +117,9 @@ setup() {
 
     title "Install/update CoC extensions"
     mkdir -p ~/.config/coc/extensions
-    cd ~/.config/coc/extensions
+    cd ~/.config/coc
+    echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
+    cd ./extensions
     echo '{"dependencies":{}}' > package.json
     npm --loglevel=error i --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
     title "Done"
