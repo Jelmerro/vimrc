@@ -133,6 +133,10 @@ imap <expr> <C-b> <SID>scroll_cursor_popup(-1) ? '' : ''
 " expand snippet suggestion
 imap <silent> <S-Tab> <Plug>(coc-snippets-expand)
 imap <silent> <Tab> <Plug>(coc-snippets-expand)
+" automatically fix diagnostics aor refactor
+noremap <silent> <leader>d :CocList diagnostics<cr>
+nmap <leader>c <Plug>(coc-codeaction)
+xmap <leader>c <Plug>(coc-codeaction-selected)
 
 " FZF
 " match the theme's colorscheme in the fzf windows

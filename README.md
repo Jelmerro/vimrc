@@ -20,8 +20,8 @@ All languages supported by Vim are supported.
 These are all languages that are (somewhat) enhanced by using this vimrc:
 
 __Bash__, __CSS__, Docker, Handlebars, __HTML__, __JavaScript__, __JSON__, Less,
-__Markdown__, __Python__, Pug, Razor, Ren'Py, SCSS, Tailwind, TypeScript,
-__Vue__, Vim, XML, YAML.
+__Markdown__, __Python__, Pug, Razor, React, Ren'Py, SCSS, Tailwind, TypeScript,
+Vue, Vim, XML, YAML.
 
 Languages in __bold__ are the main focus of this vimrc project.
 However, the install script can be easily expanded to change the list of plugins.
@@ -92,6 +92,8 @@ For Conqueror of Completion the following keys are mapped in normal mode:
 - `gr` - list and jump to references
 - `gn` - rename at cursor position
 - `<leader>f` - autoformat code
+- `<leader>c` - execute automatic diagnostic fix for the code (or selection)
+- `<leader>d` - show a list of diagnostics
 - `<c-k>` - jump to previous diagnostic
 - `<c-j>` - jump to next diagnostic
 - `K` - show CoC documentation or the vim help pages
@@ -183,6 +185,7 @@ The referenced projects are covered by different licenses, check them out below.
 [autopep8](https://github.com/hhatto/autopep8),
 [bash-language-server](https://github.com/mads-hartmann/bash-language-server),
 [eslint](https://github.com/eslint/eslint),
+[eslint-plugin-react](https://github.com/vuejs/eslint-plugin-react),
 [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue),
 [instant-markdown-d](https://github.com/suan/instant-markdown-d),
 [flake8](https://gitlab.com/pycqa/flake8),
@@ -198,6 +201,7 @@ The referenced projects are covered by different licenses, check them out below.
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
 [lambdalisue/reword.vim](https://github.com/lambdalisue/reword.vim),
+[MaxMEllon/vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [mbbill/undotree](https://github.com/mbbill/undotree),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
@@ -220,6 +224,7 @@ The referenced projects are covered by different licenses, check them out below.
 [coc-json](https://github.com/neoclide/coc-json),
 [coc-markdownlint](https://github.com/fannheyward/coc-markdownlint),
 [coc-python](https://github.com/neoclide/coc-python),
+[coc-react-refactor](https://github.com/neoclide/coc-react-refactor),
 [coc-snippets](https://github.com/neoclide/coc-snippets),
 [coc-sources](https://github.com/neoclide/coc-sources),
 [coc-syntax](https://github.com/neoclide/coc-sources),

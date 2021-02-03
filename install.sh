@@ -15,6 +15,7 @@ pip_packages=(autopep8 flake8 pylint)
 npm_packages=(
     bash-language-server@latest
     eslint@latest
+    eslint-plugin-react@latest
     eslint-plugin-vue@latest
     instant-markdown-d@latest
 )
@@ -30,6 +31,7 @@ vim_plugins=(
     junegunn/fzf.vim
     lambdalisue/suda.vim
     lambdalisue/reword.vim
+    MaxMEllon/vim-jsx-pretty
     mbbill/undotree
     "neoclide/coc.nvim release"
     pangloss/vim-javascript
@@ -55,6 +57,7 @@ coc_packages=(
     coc-json@latest
     coc-markdownlint@latest
     coc-python@latest
+    coc-react-refactor@latest
     coc-snippets@latest
     coc-syntax@latest
     coc-tailwindcss@latest
