@@ -83,14 +83,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gn <Plug>(coc-rename)
 " autoformat code based on linter
-function! s:format_code()
-    if index(['javascript','vue'], &filetype) >= 0
-        call CocAction('runCommand', 'eslint.executeAutofix')
-    else
-        call CocAction('format')
-    endif
-endfunction
-noremap <silent> <leader>f :call <SID>format_code()<cr>
+noremap <silent> <leader>f :call CocAction('format')<cr>
 " always show signcolumn to prevent flashes
 set signcolumn=yes
 " jump to diagnostics or the documentation

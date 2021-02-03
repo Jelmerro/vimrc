@@ -18,6 +18,7 @@ npm_packages=(
     eslint-plugin-react@latest
     eslint-plugin-vue@latest
     instant-markdown-d@latest
+    prettier@latest
 )
 
 # vim plugins installed in ~/.vim/pack/plugins/start
@@ -56,6 +57,7 @@ coc_packages=(
     coc-html@latest
     coc-json@latest
     coc-markdownlint@latest
+    coc-prettier@latest
     coc-python@latest
     coc-react-refactor@latest
     coc-snippets@latest
