@@ -71,6 +71,8 @@ but all linters and plugins will be installed by the script to these locations:
 - Leader key is set to the `Space` key
 - Indent-based folding that can be toggled with `<leader>t`
 
+See the `vimrc` file for details and mappings.
+
 ## Plugins
 
 This is a list of the plugins that are installed to add additional features.

@@ -67,6 +67,8 @@ let g:mapleader=" "
 set foldmethod=indent
 set foldlevel=99
 nnoremap <leader>t za
+" disable search without the current search remaining active in the background
+nmap <silent> \ :let @/="$4"<cr>
 
 " Airline
 " always show airline as the statusline without showing the mode a second time
