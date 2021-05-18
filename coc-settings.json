@@ -28,7 +28,7 @@
     "prettier.formatterPriority": -1,
     "prettier.semi": false,
     "prettier.tabWidth": 4,
-    "python.jediEnabled": false,
+    "pyright.disableDiagnostics": true,
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [

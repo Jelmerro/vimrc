@@ -55,10 +55,11 @@ coc_packages=(
     coc-git@latest
     coc-highlight@latest
     coc-html@latest
+    coc-jedi@latest
     coc-json@latest
     coc-markdownlint@latest
     coc-prettier@latest
-    coc-python@latest
+    coc-pyright@latest
     coc-react-refactor@latest
     coc-snippets@latest
     coc-syntax@latest
@@ -124,9 +125,13 @@ setup() {
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc
     echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
-    cd ./extensions
+    cd ~/.config/coc/extensions
     echo '{"dependencies":{}}' > package.json
     npm --loglevel=error i --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
+    for package in "${coc_packages[@]}";do
+        cd ~/.config/coc/extensions/node_modules/${package%%@*}
+        npm --loglevel=error i --ignore-scripts --only=prod --no-audit --no-fund
+    done
     title "Done"
 }
 
