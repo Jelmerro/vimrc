@@ -6,7 +6,7 @@
 
 # packages that are required system-wide for development and for use in vim
 system_packages=(git node npm pip3 python3 vim)
-# highly recommended system packages are: rg fzf
+# highly recommended system packages are: rg fzf bat
 
 # pip linting packages installed into ~/.local
 pip_packages=(autopep8 flake8 pylint)

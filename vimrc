@@ -27,7 +27,7 @@ set number
 " enable auto indentation
 set autoindent
 " set the .swp and backup file location to ~/.vim/backup
-call mkdir(expand("~/.vim/backup/"), "p")
+call mkdir(expand('~/.vim/backup/'), 'p')
 set backupdir=~/.vim/backup//
 set directory=~/.vim/backup//
 " reduce update time for swap
@@ -62,13 +62,13 @@ set showcmd
 " maximize the current window split (undo with the default <C-w>= binding)
 noremap <C-w>m <C-w>500><C-w>500+
 " set leader key to space
-let g:mapleader=" "
+let g:mapleader=' '
 " toggle for indent-based folding and don't apply on file open
 set foldmethod=indent
 set foldlevel=99
 nnoremap <leader>t za
 " disable search without the current search remaining active in the background
-nmap <silent> \ :let @/="$4"<cr>
+nmap <silent> \ :let @/='$4'<cr>
 
 " Airline
 " always show airline as the statusline without showing the mode a second time
@@ -152,6 +152,8 @@ let g:fzf_colors =
 nnoremap <leader>r :Rg<cr>
 nnoremap <leader>e :Files<cr>
 nnoremap <leader>b :Buffers<cr>
+" set the bat theme to something similar to onedark
+let $BAT_THEME = 'TwoDark'
 
 " Instant Markdown
 " disable autostart when opening a file
@@ -186,11 +188,11 @@ let g:tcomment_maps=0
 noremap gc :TComment<cr>
 " Add or remove the comment marker with g< or g>
 function! s:TCommentSpecial(mode)
-    call tcomment#SetOption("mode_extra", a:mode)
+    call tcomment#SetOption('mode_extra', a:mode)
     TComment | call tcomment#ResetOption()
 endfunction
-noremap <silent> g> :call <SID>TCommentSpecial("C")<cr>
-noremap <silent> g< :call <SID>TCommentSpecial("U")<cr>
+noremap <silent> g> :call <SID>TCommentSpecial('C')<cr>
+noremap <silent> g< :call <SID>TCommentSpecial('U')<cr>
 
 " Undotree
 " toggle the undo tree easily
