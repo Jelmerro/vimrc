@@ -48,8 +48,13 @@ packadd! matchit
 let g:netrw_dirhistmax=0
 
 " Keybindings
-" exit insert mode from terminal with normal keystrokes
-tnoremap <Esc> <C-\><C-n>
+" set spelling options to sound-based suggestions and allow asian characters
+nmap <silent> <C-s> :set spell!<cr>
+set spellsuggest=double
+set spelllang=en,cjk
+" exit to normal mode from terminal and other places with 'kj'
+tnoremap kj <C-\><C-n>
+inoremap kj <Esc>
 " toggle line wrap with shift-w
 set nowrap
 noremap <silent> W :set wrap!<cr>

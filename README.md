@@ -69,8 +69,9 @@ but all linters and plugins will be installed by the script to these locations:
 - Store all vim swap and backup files in ~/.vim/backup
 - Enable fenced markdown languages and the matchit plugin
 - More direct feedback using search highlighting, wildmenu, showcmd and such
-- Leader key is set to the `Space` key
-- Indent-based folding that can be toggled with `<leader>t`
+- Leader key is set to the `Space`, toggle indent-based folding with `<leader>t`
+- Toggle line wrap with `W` and toggle spellchecker with `<c-s>`
+- Clear the search with `\` and exit insert/terminal modes with `kj`
 
 See the `vimrc` file for details and mappings.
 
