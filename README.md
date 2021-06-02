@@ -11,7 +11,7 @@ vimrc
 - Linting with eslint, tsserver, flake8 and pylint (with config and prettier fallback)
 - Improved syntax highlighting for JavaScript, Vue, React, SCSS and Pug
 - Fuzzy code and file search using FZF and ripgrep
-- One Dark theme everywhere
+- Vim One theme everywhere in both light and dark shades
 - My vimrc to configure all of the above and more
 
 # Supported languages
@@ -138,9 +138,10 @@ Or `<<` and `>>` to do the same outside of insert mode.
 - The preview won't open automatically
 - Open the preview with the custom :MD command
 
-### One Dark
+### Vim One
 
 - Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
+- Switch between light and dark with `D`
 
 ### Reword
 
@@ -202,7 +203,6 @@ The referenced projects are covered by different licenses, check them out below.
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
-[joshdick/onedark.vim](https://github.com/joshdick/onedark.vim),
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
 [lambdalisue/reword.vim](https://github.com/lambdalisue/reword.vim),
@@ -211,6 +211,7 @@ The referenced projects are covered by different licenses, check them out below.
 [mbbill/undotree](https://github.com/mbbill/undotree),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
 [posva/vim-vue](https://github.com/posva/vim-vue),
+[laggardkernel/vim-one](https://github.com/laggardkernel/vim-one),
 [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate),
 [suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown),
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),

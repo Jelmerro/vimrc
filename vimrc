@@ -157,8 +157,6 @@ let g:fzf_colors =
 nnoremap <leader>r :Rg<cr>
 nnoremap <leader>e :Files<cr>
 nnoremap <leader>b :Buffers<cr>
-" set the bat theme to something similar to onedark
-let $BAT_THEME = 'TwoDark'
 
 " Instant Markdown
 " disable autostart when opening a file
@@ -170,17 +168,61 @@ function! s:markdown_preview()
 endfunction
 command! MD call s:markdown_preview()
 
-" Onedark theme
-" load and use the onedark theme
-packadd! onedark.vim
-colorscheme onedark
+" One theme
+" load and use the one theme by default dark
+colorscheme one
 " enable gui colors in the terminal, which looks nicer if supported
 set termguicolors
-" show illuminated words in relatively light gray
-hi illuminatedWord guibg=#444444 ctermbg=238
-" show special characters in cyan
-hi NonText guifg=#00cccc ctermfg=44
-hi SpecialKey guifg=#00cccc ctermfg=44
+" explicitly set the airline color theme
+let g:airline_theme = 'one'
+" automatically update missing features of theme when switching between shades
+function! s:toggleTheme()
+    if &background == 'light'
+        set background=dark
+    else
+        set background=light
+    endif
+endfunction
+nmap <silent> D :call <SID>toggleTheme()<cr>
+augroup theme
+    autocmd!
+    function! s:updateTheme()
+        if &background == 'light'
+            " show illuminated words in a slightly darker gray compared to bg
+            hi illuminatedWord guibg=#e6e6e6 ctermbg=238
+            " match the fzf preview (bat) with the current shade
+            let $BAT_THEME = 'OneHalfLight'
+            " actually show missspelled words, one theme doesn't show them
+            hi SpellBad guifg=NONE guibg=#ffccee guisp=NONE gui=NONE ctermfg=NONE ctermbg=225 cterm=NONE
+            hi SpellRare guifg=NONE guibg=#ffeecc guisp=NONE gui=NONE ctermfg=NONE ctermbg=223 cterm=NONE
+            hi SpellCap guifg=NONE guibg=#cceeff guisp=NONE gui=NONE ctermfg=NONE ctermbg=195 cterm=NONE
+        else
+            " show illuminated words in a slightly lighter gray compared to bg
+            hi illuminatedWord guibg=#444444 ctermbg=238
+            " match the fzf preview (bat) with the current shade
+            let $BAT_THEME = 'TwoDark'
+            " actually show missspelled words, one theme doesn't show them
+            hi SpellBad guifg=NONE guibg=#663355 guisp=NONE gui=NONE ctermfg=NONE ctermbg=89 cterm=NONE
+            hi SpellRare guifg=NONE guibg=#665533 guisp=NONE gui=NONE ctermfg=NONE ctermbg=94 cterm=NONE
+            hi SpellCap guifg=NONE guibg=#335566 guisp=NONE gui=NONE ctermfg=NONE ctermbg=24 cterm=NONE
+        endif
+        " don't give diffs a different background, colors are enough
+        hi DiffAdd ctermbg=bg guibg=bg
+        hi DiffAdded ctermbg=bg guibg=bg
+        hi DiffChange ctermbg=bg guibg=bg
+        hi DiffDelete ctermbg=bg guibg=bg
+        hi DiffFile ctermbg=bg guibg=bg
+        hi DiffLine ctermbg=bg guibg=bg
+        hi DiffNewFile ctermbg=bg guibg=bg
+        hi DiffRemoved ctermbg=bg guibg=bg
+        hi DiffText ctermbg=bg guibg=bg
+        " show special characters with a cyan background
+        hi SpecialKey guibg=#00cccc ctermbg=44 guifg=bg ctermfg=bg
+    endfunction
+    au OptionSet background :call <SID>updateTheme()
+augroup END
+set background=dark
+call <SID>updateTheme()
 
 " Suda
 " automatically open root owned files with sudo

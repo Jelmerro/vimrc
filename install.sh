@@ -27,7 +27,6 @@ vim_plugins=(
     editorconfig/editorconfig-vim
     digitaltoad/vim-pug
     honza/vim-snippets
-    joshdick/onedark.vim
     junegunn/fzf
     junegunn/fzf.vim
     lambdalisue/suda.vim
@@ -38,6 +37,7 @@ vim_plugins=(
     pangloss/vim-javascript
     posva/vim-vue
     RRethy/vim-illuminate
+    laggardkernel/vim-one
     suan/vim-instant-markdown
     tomtom/tcomment_vim
     tpope/vim-fugitive
