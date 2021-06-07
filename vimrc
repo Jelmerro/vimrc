@@ -206,16 +206,16 @@ augroup theme
             hi SpellRare guifg=NONE guibg=#665533 guisp=NONE gui=NONE ctermfg=NONE ctermbg=94 cterm=NONE
             hi SpellCap guifg=NONE guibg=#335566 guisp=NONE gui=NONE ctermfg=NONE ctermbg=24 cterm=NONE
         endif
-        " don't give diffs a different background, colors are enough
-        hi DiffAdd ctermbg=bg guibg=bg
-        hi DiffAdded ctermbg=bg guibg=bg
-        hi DiffChange ctermbg=bg guibg=bg
-        hi DiffDelete ctermbg=bg guibg=bg
-        hi DiffFile ctermbg=bg guibg=bg
-        hi DiffLine ctermbg=bg guibg=bg
-        hi DiffNewFile ctermbg=bg guibg=bg
-        hi DiffRemoved ctermbg=bg guibg=bg
-        hi DiffText ctermbg=bg guibg=bg
+        " don't give diffs a different background, colors in bold are enough
+        hi DiffAdd ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffAdded ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffChange ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffDelete ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffFile ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffLine ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffNewFile ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffRemoved ctermbg=bg guibg=bg cterm=bold gui=bold
+        hi DiffText ctermbg=bg guibg=bg cterm=bold gui=bold
         " show special characters with a cyan background
         hi SpecialKey guibg=#00cccc ctermbg=44 guifg=bg ctermfg=bg
     endfunction

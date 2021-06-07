@@ -29,6 +29,7 @@ vim_plugins=(
     honza/vim-snippets
     junegunn/fzf
     junegunn/fzf.vim
+    laggardkernel/vim-one
     lambdalisue/suda.vim
     lambdalisue/reword.vim
     MaxMEllon/vim-jsx-pretty
@@ -37,7 +38,6 @@ vim_plugins=(
     pangloss/vim-javascript
     posva/vim-vue
     RRethy/vim-illuminate
-    laggardkernel/vim-one
     suan/vim-instant-markdown
     tomtom/tcomment_vim
     tpope/vim-fugitive
