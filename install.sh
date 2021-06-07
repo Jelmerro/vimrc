@@ -103,10 +103,11 @@ setup() {
         rm -rf ~/.vim ~/.config/coc
     fi
     subtitle "Copy config files"
-    mkdir -p ~/.vim/
+    mkdir -p ~/.vim/spell/
     cd $(dirname $(realpath $0))
     cp .eslintrc.json ~
     cp vimrc ~/.vim/vimrc
+    cp nl.utf-8.spl ~/.vim/spell/nl.utf-8.spl
     cp coc-settings.json ~/.vim/coc-settings.json
 
     title "Install/update linters and parsers"

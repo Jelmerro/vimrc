@@ -48,10 +48,16 @@ packadd! matchit
 let g:netrw_dirhistmax=0
 
 " Keybindings
+" set leader key to space
+let g:mapleader=' '
 " set spelling options to sound-based suggestions and allow asian characters
-nmap <silent> <C-s> :set spell!<cr>
+nmap <silent> <leader>s :set spell!<cr>
+nmap <silent> <leader>ss :set spell!<cr>
+nmap <silent> <leader>se :set spelllang=cjk,en<cr>
+nmap <silent> <leader>sn :set spelllang=cjk,nl<cr>
+nmap <silent> <leader>sa :set spelllang=cjk,en,nl<cr>
 set spellsuggest=double
-set spelllang=en,cjk
+set spelllang=cjk,en,nl
 " exit to normal mode from terminal and other places with 'kj'
 tnoremap kj <C-\><C-n>
 inoremap kj <Esc>
@@ -66,8 +72,6 @@ set backspace=indent,eol,start
 set showcmd
 " maximize the current window split (undo with the default <C-w>= binding)
 noremap <C-w>m <C-w>500><C-w>500+
-" set leader key to space
-let g:mapleader=' '
 " toggle for indent-based folding and don't apply on file open
 set foldmethod=indent
 set foldlevel=99
