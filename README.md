@@ -70,7 +70,8 @@ but all linters and plugins will be installed by the script to these locations:
 - Enable fenced markdown languages and the matchit plugin
 - More direct feedback using search highlighting, wildmenu, showcmd and such
 - Leader key is set to the `Space`, toggle indent-based folding with `<leader>t`
-- Toggle line wrap with `W` and toggle spellchecker with `<c-s>`
+- Toggle line wrap with `W` and toggle spellchecker with `<leader>ss`
+- Switch between English, Dutch and combined with `<leader>s` + `e`, `n` or `b` respectively
 - Clear the search with `\` and exit insert/terminal modes with `kj`
 
 See the `vimrc` file for details and mappings.
