@@ -115,7 +115,7 @@ setup() {
     pip3 install --user -U ${pip_packages[@]}
     subtitle "Npm packages"
     npm config set prefix "~/.local"
-    npm --loglevel=error i --no-audit --no-fund -g ${npm_packages[@]}
+    npm --loglevel=error i --force --no-audit --no-fund -g ${npm_packages[@]}
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
@@ -128,10 +128,10 @@ setup() {
     echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
     cd ~/.config/coc/extensions
     echo '{"dependencies":{}}' > package.json
-    npm --loglevel=error i --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
+    npm --loglevel=error i --force --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
     for package in "${coc_packages[@]}";do
         cd ~/.config/coc/extensions/node_modules/${package%%@*}
-        npm --loglevel=error i --ignore-scripts --only=prod --no-audit --no-fund
+        npm --loglevel=error i --force --ignore-scripts --only=prod --no-audit --no-fund
     done
     title "Done"
 }
