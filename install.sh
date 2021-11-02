@@ -31,6 +31,7 @@ vim_plugins=(
     junegunn/fzf.vim
     laggardkernel/vim-one
     lambdalisue/suda.vim
+    APZelos/blamer.nvim
     lambdalisue/reword.vim
     MaxMEllon/vim-jsx-pretty
     mbbill/undotree

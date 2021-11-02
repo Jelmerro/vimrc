@@ -40,7 +40,7 @@ set incsearch
 " indent wrapped lines the same as the start of the line
 set breakindent
 " highlight code snippets in markdown files
-let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascript', 'python']
+let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascript', 'ts=typescript', 'python']
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
@@ -85,6 +85,16 @@ set laststatus=2
 set noshowmode
 " only enable relevant extensions
 let g:airline_extensions=['coc', 'fugitiveline', 'netrw', 'term', 'virtualenv']
+
+" Blamer
+" load on startup
+let g:blamer_enabled = 1
+" disable in insert mode
+let g:blamer_show_in_insert_modes = 0
+" separate blame from code with multiple spaces
+let g:blamer_prefix = '        '
+" use sensible date format
+let g:blamer_date_format = '%y-%m-%d %H:%M'
 
 " CoC (code suggestions, diagnostics and refactoring)
 " find or update definitions
@@ -222,6 +232,8 @@ augroup theme
         hi DiffText ctermbg=bg guibg=bg cterm=bold gui=bold
         " show special characters with a cyan background
         hi SpecialKey guibg=#00cccc ctermbg=44 guifg=bg ctermfg=bg
+        " blamer highlight in cyan
+        hi Blamer guifg=#00cccc ctermfg=44
     endfunction
     au OptionSet background :call <SID>updateTheme()
 augroup END

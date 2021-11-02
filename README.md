@@ -87,6 +87,10 @@ a list of these can be found at the bottom of this readme.
 
 - Themed statusline with limited extensions loaded, including CoC and venv
 
+### Blamer
+
+- Show the last commit info on the current line in blue
+
 ### CoC
 
 For Conqueror of Completion the following keys are mapped in normal mode:
@@ -200,6 +204,7 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Vim plugins
 
+[APZelos/blamer.nvim](https://github.com/APZelos/blamer.nvim),
 [chaimleib/vim-renpy](https://github.com/chaimleib/vim-renpy),
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
