@@ -58,6 +58,9 @@ but all linters and plugins will be installed by the script to these locations:
 - `~/.eslintrc.json` contains the eslint config
 - `~/.config/coc/` for all autocompletion related packages
 
+Optionally you can append `./install.sh` with 'clean' or 'config-only',
+which will wipe the existing .vim folder or only install the config, respectively.
+
 # Features and usage
 
 ## Base

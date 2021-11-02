@@ -100,7 +100,7 @@ setup() {
             exit
         fi
     done
-    if [[ $1 = clean ]];then
+    if [[ $1 = 'clean' ]];then
         rm -rf ~/.vim ~/.config/coc
     fi
     subtitle "Copy config files"
@@ -110,6 +110,10 @@ setup() {
     cp vimrc ~/.vim/vimrc
     cp nl.utf-8.spl ~/.vim/spell/nl.utf-8.spl
     cp coc-settings.json ~/.vim/coc-settings.json
+    if [[ $1 = 'config-only' ]];then
+        title "Done"
+        exit
+    fi
 
     title "Install/update linters and parsers"
     subtitle "Pip packages"

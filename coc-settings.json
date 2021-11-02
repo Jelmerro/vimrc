@@ -44,6 +44,5 @@
         "--disable=W0621"
     ],
     "python.linting.pylintCategorySeverity.convention": "Hint",
-    "python.linting.pylintUseMinimalCheckers": false,
     "tailwindCSS.headwind.runOnSave": false
 }
