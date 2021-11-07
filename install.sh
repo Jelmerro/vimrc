@@ -31,7 +31,6 @@ vim_plugins=(
     junegunn/fzf.vim
     laggardkernel/vim-one
     lambdalisue/suda.vim
-    APZelos/blamer.nvim
     lambdalisue/reword.vim
     MaxMEllon/vim-jsx-pretty
     mbbill/undotree
@@ -101,7 +100,7 @@ setup() {
         fi
     done
     if [[ $1 = 'clean' ]];then
-        rm -rf ~/.vim ~/.config/coc
+        rm -rf ~/.vim/spell/ ~/.vim/pack/ ~/.vim/vimrc ~/.vim/coc-settings.json ~/.config/coc
     fi
     subtitle "Copy config files"
     mkdir -p ~/.vim/spell/

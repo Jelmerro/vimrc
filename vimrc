@@ -86,16 +86,6 @@ set noshowmode
 " only enable relevant extensions
 let g:airline_extensions=['coc', 'fugitiveline', 'netrw', 'term', 'virtualenv']
 
-" Blamer
-" load on startup
-let g:blamer_enabled = 1
-" disable in insert mode
-let g:blamer_show_in_insert_modes = 0
-" separate blame from code with multiple spaces
-let g:blamer_prefix = '        '
-" use sensible date format
-let g:blamer_date_format = '%y-%m-%d %H:%M'
-
 " CoC (code suggestions, diagnostics and refactoring)
 " find or update definitions
 nmap <silent> gd <Plug>(coc-definition)
@@ -232,8 +222,6 @@ augroup theme
         hi DiffText ctermbg=bg guibg=bg cterm=bold gui=bold
         " show special characters with a cyan background
         hi SpecialKey guibg=#00cccc ctermbg=44 guifg=bg ctermfg=bg
-        " blamer highlight in cyan
-        hi Blamer guifg=#00cccc ctermfg=44
     endfunction
     au OptionSet background :call <SID>updateTheme()
 augroup END
