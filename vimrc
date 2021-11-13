@@ -7,7 +7,8 @@
 " General
 " ignore and reset distro specific configurations
 set all&
-set runtimepath=~/.vim,$VIMRUNTIME
+" WORKAROUND for broken eslint linter: coc-eslint
+set runtimepath=~/.vim,$VIMRUNTIME,~/.config/coc/extensions/coc-eslint
 set packpath=~/.vim,$VIMRUNTIME
 set nocompatible
 " always use 4 spaces as the default
