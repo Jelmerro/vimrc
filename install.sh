@@ -52,7 +52,7 @@ coc_packages=(
     coc-docker@latest
     coc-emoji@latest
     # WORKAROUND for broken eslint config
-    # coc-eslint@latest
+    coc-eslint8@latest
     coc-git@latest
     coc-highlight@latest
     coc-html@latest
@@ -132,14 +132,6 @@ setup() {
     cd ~/.config/coc
     echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
     cd ~/.config/coc/extensions
-    # start workaround
-    git clone https://github.com/fannheyward/coc-eslint
-    cd coc-eslint
-    git checkout feat/eslint-8
-    npm i --force
-    npm run build
-    cd ..
-    # end workaround
     echo '{"dependencies":{}}' > package.json
     npm --loglevel=error i --force --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
     for package in "${coc_packages[@]}";do

@@ -7,8 +7,7 @@
 " General
 " ignore and reset distro specific configurations
 set all&
-" WORKAROUND for broken eslint linter: coc-eslint
-set runtimepath=~/.vim,$VIMRUNTIME,~/.config/coc/extensions/coc-eslint
+set runtimepath=~/.vim,$VIMRUNTIME
 set packpath=~/.vim,$VIMRUNTIME
 set nocompatible
 " always use 4 spaces as the default
@@ -25,8 +24,9 @@ set cursorlineopt=number
 set colorcolumn=80
 " display line numbers
 set number
-" enable auto indentation
+" enable smart auto indentation
 set autoindent
+set smartindent
 " set the .swp and backup file location to ~/.vim/backup
 call mkdir(expand('~/.vim/backup/'), 'p')
 set backupdir=~/.vim/backup//
