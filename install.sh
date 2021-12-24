@@ -51,8 +51,7 @@ coc_packages=(
     coc-dictionary@latest
     coc-docker@latest
     coc-emoji@latest
-    # WORKAROUND for broken eslint config
-    coc-eslint8@latest
+    coc-eslint@latest
     coc-git@latest
     coc-highlight@latest
     coc-html@latest
