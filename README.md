@@ -203,6 +203,7 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Vim plugins
 
+[ap/vim-css-color](https://github.com/ap/vim-css-color),
 [chaimleib/vim-renpy](https://github.com/chaimleib/vim-renpy),
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),

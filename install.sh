@@ -23,6 +23,7 @@ npm_packages=(
 
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
+    ap/vim-css-color
     chaimleib/vim-renpy
     editorconfig/editorconfig-vim
     digitaltoad/vim-pug
