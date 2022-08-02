@@ -137,7 +137,7 @@ imap <expr> <C-f> <SID>scroll_cursor_popup(1) ? '' : ''
 imap <expr> <C-b> <SID>scroll_cursor_popup(-1) ? '' : ''
 " expand snippet suggestion
 imap <silent> <S-Tab> <Nop>
-inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : ""
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#_select_confirm() : ""
 " automatically fix diagnostics aor refactor
 noremap <silent> <leader>d :CocList diagnostics<cr>
 nmap <leader>c <Plug>(coc-codeaction)
