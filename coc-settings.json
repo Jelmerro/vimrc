@@ -11,6 +11,8 @@
     "git.changeRemovedSign.text": "±",
     "git.removedSign.text": ".",
     "git.topRemovedSign.text": "^",
+    "html.autoClosingTags": false,
+    "html.autoCreateQuotes": false,
     "languageserver": {
         "bash": {
             "args": [
