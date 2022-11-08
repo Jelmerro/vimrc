@@ -1,6 +1,6 @@
 " Jelmerro's Vim configuration
 " Configure Vim with autocompletion, keybindings, editorconfig and linting
-" Suitable for Python, JavaScript, Vue, Docker and related files
+" Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 " For updates and info go to https://github.com/Jelmerro/vimrc
 " This file is released into the public domain, see UNLICENSE file for details
 
@@ -95,7 +95,15 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gn <Plug>(coc-rename)
 " autoformat code based on linter
-noremap <silent> <leader>f :call CocAction('format')<cr>
+function! s:auto_format()
+    " eslint is no longer exposed as a proper linter to coc
+    if index(['js', 'jsx', 'javascript', 'javascriptreact', 'ts', 'typescript', 'typescriptcommon', 'typescriptreact'], &filetype) >= 0
+        silent! CocCommand eslint.executeAutofix
+    else
+        call CocAction('format')
+    endif
+endfunction
+noremap <silent> <leader>f :call <SID>auto_format()<cr>
 " always show signcolumn to prevent flashes
 set signcolumn=yes
 " jump to diagnostics or the documentation

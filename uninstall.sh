@@ -1,6 +1,6 @@
 # Jelmerro's Vim configuration
 # Configure Vim with autocompletion, keybindings, editorconfig and linting
-# Suitable for Python, JavaScript, Vue, Docker and related files
+# Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 # For updates and info go to https://github.com/Jelmerro/vimrc
 # This file is released into the public domain, see UNLICENSE file for details
 

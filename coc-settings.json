@@ -6,6 +6,7 @@
     "diagnostic.infoSign": ">>",
     "diagnostic.warningSign": ">>",
     "eslint.format.enable": true,
+    "typescript.format.enabled": false,
     "git.addedSign.text": "+",
     "git.changedSign.text": "~",
     "git.changeRemovedSign.text": "±",
@@ -26,10 +27,6 @@
             "ignoredRootPaths": []
         }
     },
-    "prettier.disableLanguages": [],
-    "prettier.formatterPriority": -1,
-    "prettier.semi": false,
-    "prettier.tabWidth": 4,
     "pyright.disableDiagnostics": true,
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": true,

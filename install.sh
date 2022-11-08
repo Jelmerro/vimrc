@@ -1,6 +1,6 @@
 # Jelmerro's Vim configuration
 # Configure Vim with autocompletion, keybindings, editorconfig and linting
-# Suitable for Python, JavaScript, Vue, Bash, Docker and related filetypes
+# Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 # For updates and info go to https://github.com/Jelmerro/vimrc
 # This file is released into the public domain, see UNLICENSE file for details
 
@@ -18,7 +18,6 @@ npm_packages=(
     eslint-plugin-react@latest
     eslint-plugin-vue@latest
     instant-markdown-d@latest
-    prettier@latest
 )
 
 # vim plugins installed in ~/.vim/pack/plugins/start
@@ -59,7 +58,6 @@ coc_packages=(
     coc-jedi@latest
     coc-json@latest
     coc-markdownlint@latest
-    coc-prettier@latest
     coc-pyright@latest
     coc-react-refactor@latest
     coc-snippets@latest

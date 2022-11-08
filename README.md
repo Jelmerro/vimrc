@@ -8,8 +8,8 @@ vimrc
 - Easy to install and expand with other plugins
 - Deterministic configuration, disables any system settings
 - Intelligent autocomplete using CoC
-- Linting with eslint, tsserver, flake8 and pylint (with config and prettier fallback)
-- Improved syntax highlighting for JavaScript, Vue, React, SCSS and Pug
+- Linting with eslint, tsserver, flake8 and pylint (with config)
+- Improved syntax highlighting for JavaScript, React, Vue, SCSS and Pug
 - Fuzzy code and file search using FZF and ripgrep
 - Vim One theme everywhere in both light and dark shades
 - My vimrc to configure all of the above and more
@@ -198,7 +198,6 @@ The referenced projects are covered by different licenses, check them out below.
 [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue),
 [instant-markdown-d](https://github.com/suan/instant-markdown-d),
 [flake8](https://gitlab.com/pycqa/flake8),
-[prettier](https://github.com/prettier/prettier),
 [pylint](https://github.com/PyCQA/pylint)
 
 ## Vim plugins
@@ -235,7 +234,6 @@ The referenced projects are covered by different licenses, check them out below.
 [coc-jedi](https://github.com/pappasam/coc-jedi),
 [coc-json](https://github.com/neoclide/coc-json),
 [coc-markdownlint](https://github.com/fannheyward/coc-markdownlint),
-[coc-prettier](https://github.com/neoclide/coc-prettier),
 [coc-pyright](https://github.com/fannheyward/coc-pyright),
 [coc-react-refactor](https://github.com/neoclide/coc-react-refactor),
 [coc-snippets](https://github.com/neoclide/coc-snippets),
