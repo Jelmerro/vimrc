@@ -40,6 +40,8 @@ set hlsearch
 set incsearch
 " indent wrapped lines the same as the start of the line
 set breakindent
+" show search numbers and shorten all file info messages
+set shortmess=Toat
 " highlight code snippets in markdown files
 let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascript', 'ts=typescript', 'python']
 " find matching tags in html/xml documents using matchit
