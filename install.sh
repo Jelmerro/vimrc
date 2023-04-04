@@ -31,7 +31,6 @@ vim_plugins=(
     junegunn/fzf.vim
     laggardkernel/vim-one
     lambdalisue/suda.vim
-    lambdalisue/reword.vim
     MaxMEllon/vim-jsx-pretty
     mbbill/undotree
     "neoclide/coc.nvim release"
@@ -43,6 +42,7 @@ vim_plugins=(
     tpope/vim-fugitive
     vim-airline/vim-airline
     vim-ide/scss-syntax.vim
+    wellle/context.vim
 )
 
 # coc plugin with extensions installed by npm into ~/.config/coc/extensions

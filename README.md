@@ -147,10 +147,6 @@ Or `<<` and `>>` to do the same outside of insert mode.
 - Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
 - Switch between light and dark with `D`
 
-### Reword
-
-- Rename camelCaseWords or snake_case_words all the same with `:Reword`
-
 ### Snippets
 
 - A collection of snippets that will be suggested by CoC
@@ -172,6 +168,10 @@ In normal or visual mode, these keybindings can be used:
 ### Undotree
 
 - Toggle the Undotree with `<leader>u`, which automatically shifts the focus there
+
+### Context
+
+- Show the context of the current function or path you are editing at the top
 
 # Uninstall
 
@@ -210,7 +210,6 @@ The referenced projects are covered by different licenses, check them out below.
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [laggardkernel/vim-one](https://github.com/laggardkernel/vim-one),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
-[lambdalisue/reword.vim](https://github.com/lambdalisue/reword.vim),
 [MaxMEllon/vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [mbbill/undotree](https://github.com/mbbill/undotree),
@@ -222,6 +221,7 @@ The referenced projects are covered by different licenses, check them out below.
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive),
 [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline),
 [vim-ide/scss-syntax.vim](https://github.com/vim-ide/scss-syntax.vim)
+[wellle/context.vim](https://github.com/wellle/context.vim)
 
 ## CoC extensions
 
