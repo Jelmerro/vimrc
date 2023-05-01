@@ -49,6 +49,8 @@ filetype plugin on
 packadd! matchit
 " don't keep netrw hist files
 let g:netrw_dirhistmax=0
+" Show JSDoc highlight colors
+let g:javascript_plugin_jsdoc = 1
 
 " Keybindings
 " set leader key to space
