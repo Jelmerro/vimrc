@@ -47,10 +47,11 @@ let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascrip
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
-" don't keep netrw hist files
-let g:netrw_dirhistmax=0
-" Show JSDoc highlight colors
-let g:javascript_plugin_jsdoc = 1
+" disable super buggy netrw
+let g:loaded_netrw=1
+let g:netrw_loaded_netrwPlugin=1
+" show JSDoc highlight colors
+let g:javascript_plugin_jsdoc=1
 
 " Keybindings
 " set leader key to space
@@ -89,7 +90,7 @@ nmap <silent> \ :let @/='$4'<cr>
 set laststatus=2
 set noshowmode
 " only enable relevant extensions
-let g:airline_extensions=['coc', 'fugitiveline', 'netrw', 'term', 'virtualenv']
+let g:airline_extensions=['coc', 'fugitiveline', 'term', 'virtualenv']
 
 " CoC (code suggestions, diagnostics and refactoring)
 " find or update definitions
