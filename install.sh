@@ -1,3 +1,4 @@
+#!/bin/bash
 # Jelmerro's Vim configuration
 # Configure Vim with autocompletion, keybindings, editorconfig and linting
 # Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
