@@ -44,6 +44,7 @@ Linters and Vim plugins ARE installed by the `install.sh` script.
 - bat - for showing FZF previews with syntax colors instead of text-only
 - FZF (fzf) - for using any kind of fuzzy search commands, such as :Files
 - Ripgrep (rg) - for using the :Rg command to fuzzy search file contents
+- ShellCheck (shellcheck) - for linting sh/bash files for common errors
 
 # Install
 
@@ -249,4 +250,5 @@ The referenced projects are covered by different licenses, check them out below.
 
 [bat](https://github.com/sharkdp/bat),
 [fzf](https://github.com/junegunn/fzf),
-[ripgrep](https://github.com/BurntSushi/ripgrep)
+[ripgrep](https://github.com/BurntSushi/ripgrep),
+[shellcheck](https://github.com/koalaman/shellcheck)

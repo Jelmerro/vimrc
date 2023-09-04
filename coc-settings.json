@@ -6,7 +6,7 @@
     "diagnostic.infoSign": ">>",
     "diagnostic.warningSign": ">>",
     "eslint.format.enable": true,
-    "typescript.format.enabled": false,
+    "typescript.format.enable": false,
     "git.addedSign.text": "+",
     "git.changedSign.text": "~",
     "git.changeRemovedSign.text": "±",

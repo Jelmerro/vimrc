@@ -79,12 +79,14 @@ subtitle() { echo -e "\n\x1b[31m - \x1b[33m$1\x1b[0m\n"; }
 plugin() {
     subtitle "$1"
     mkdir -p ~/.vim/pack/plugins/start
-    cd ~/.vim/pack/plugins/start
-    if [ ! -d $(basename $1) ];then
-        git clone https://github.com/$1
+    cd ~/.vim/pack/plugins/start || exit
+    if [ ! -d "$(basename "$1")" ];then
+        git clone "https://github.com/$1"
     fi
-    cd $(basename $1)
-    git checkout $2
+    cd "$(basename "$1")" || exit
+    if [ -n "$2" ];then
+        git checkout "$2"
+    fi
     git pull --all
 }
 
@@ -92,10 +94,10 @@ setup() {
     title "Jelmerro's Vim installation script"
     echo "See https://github.com/Jelmerro/vimrc for info and updates"
     subtitle "Check required system software"
-    for software in ${system_packages[@]};do
-        which $software
+    for software in "${system_packages[@]}";do
+        which "$software"
         if [ $? == 1 ];then
-            echo $software should be installed on your system
+            echo "$software should be installed on your system"
             exit
         fi
     done
@@ -104,7 +106,7 @@ setup() {
     fi
     subtitle "Copy config files"
     mkdir -p ~/.vim/spell/
-    cd $(dirname $(realpath $0))
+    cd "$(dirname "$(realpath "$0")")" || exit
     cp .eslintrc.json ~
     cp vimrc ~/.vim/vimrc
     cp nl.utf-8.spl ~/.vim/spell/nl.utf-8.spl
@@ -116,32 +118,32 @@ setup() {
 
     title "Install/update linters and parsers"
     subtitle "Pip packages"
-    pip3 install --user -U ${pip_packages[@]}
+    pip3 install --user -U "${pip_packages[@]}"
     subtitle "Npm packages"
-    npm config set prefix "~/.local"
-    npm --loglevel=error i --force --no-audit --no-fund -g ${npm_packages[@]}
+    npm config set prefix "$HOME/.local"
+    npm --loglevel=error i --force --no-audit --no-fund -g "${npm_packages[@]}"
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
+        # shellcheck disable=SC2086
         plugin $plug
     done
 
     title "Install/update CoC extensions"
     mkdir -p ~/.config/coc/extensions
-    cd ~/.config/coc
+    cd ~/.config/coc || exit
     echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
-    cd ~/.config/coc/extensions
+    cd ~/.config/coc/extensions || exit
     echo '{"dependencies":{}}' > package.json
-    npm --loglevel=error i --force --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
+    npm --loglevel=error i --force --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund "${coc_packages[@]}"
     for package in "${coc_packages[@]}";do
-        cd ~/.config/coc/extensions/node_modules/${package%%@*}
+        cd "$HOME/.config/coc/extensions/node_modules/${package%%@*}" || continue
         npm --loglevel=error i --force --ignore-scripts --only=prod --no-audit --no-fund
     done
     title "Done"
 }
 
 # start the setup if called as script
-$(return >/dev/null 2>&1)
-if [ $? != 0 ];then
-    setup $1
+if [ "$0" = "${BASH_SOURCE[0]}" ];then
+    setup "$1"
 fi
