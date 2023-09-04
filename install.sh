@@ -12,13 +12,17 @@ system_packages=(git node npm pip3 python3 vim)
 # pip linting packages installed into ~/.local
 pip_packages=(autopep8 flake8 pylint)
 
-# npm linting packages installed into ~/.local
+# global npm packages installed into ~/.local
 npm_packages=(
     bash-language-server@latest
-    eslint@latest
-    eslint-plugin-react@latest
-    eslint-plugin-vue@latest
     instant-markdown-d@latest
+)
+
+# npm linting packages installed into ~/node_modules/
+eslint_packages=(
+    eslint@latest
+    eslint-plugin-jsdoc@latest
+    eslint-plugin-sort-keys@latest
 )
 
 # vim plugins installed in ~/.vim/pack/plugins/start
@@ -122,6 +126,8 @@ setup() {
     subtitle "Npm packages"
     npm config set prefix "$HOME/.local"
     npm --loglevel=error i --force --no-audit --no-fund -g "${npm_packages[@]}"
+    cd ~ || exit
+    npm --loglevel=error i --force --no-audit --no-fund -D "${eslint_packages[@]}"
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do

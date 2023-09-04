@@ -17,6 +17,8 @@ ask_removal() {
             pip3 uninstall -y "$2"
         fi
         if [ "$1" == "npm" ];then
+            cd ~ || exit
+            npm uninstall "$(echo "$2" | cut -d "@" -f 1)"
             npm uninstall -g "$(echo "$2" | cut -d "@" -f 1)"
         fi
     esac
@@ -33,6 +35,9 @@ case $uninstall in [Yy]|[Yy][Ee][Ss])
     done
     npm config set prefix "$HOME/.local"
     for package in "${npm_packages[@]}";do
+        ask_removal npm "$package"
+    done
+    for package in "${eslint_packages[@]}";do
         ask_removal npm "$package"
     done
 esac

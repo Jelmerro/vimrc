@@ -55,7 +55,7 @@ The install script will ask you to install system packages manually,
 but all linters and plugins will be installed by the script to these locations:
 
 - `~/.vim/` for all Vim configuration, including the vimrc
-- `~/.local/` for npm and pip packages (mostly linters and parsers)
+- `~/.local/` and `~/node_modules/` for pip and npm packages (mostly linters)
 - `~/.eslintrc.json` contains the eslint config
 - `~/.config/coc/` for all autocompletion related packages
 
