@@ -24,7 +24,7 @@ done
 # check the config for base eslint rules that are no longer present
 mapfile -td $'\n' old_rules < <(comm -1 -3 <(printf "%s\n" "${actual[@]}" | LC_ALL=C sort) <(printf "%s\n" "${current[@]}" | LC_ALL=C sort))
 for rule in "${old_rules[@]}";do
-    if [[ "$rule" != jsdoc* && "$rule" != "sort-keys/sort-keys-fix" ]];then
+    if [[ "$rule" != padding-lines/* && "$rule" != jsdoc/* && "$rule" != "sort-keys/sort-keys-fix" ]];then
         echo "$rule is no longer valid"
     fi
 done
@@ -39,7 +39,7 @@ done
 
 # check the config for jsdoc rules no longer present
 for rule in "${old_rules[@]}";do
-    if [[ "$rule" == jsdoc* ]];then
+    if [[ "$rule" == jsdoc/* ]];then
         if echo "${jsdoc_rules[@]}" | grep -vwq "$rule";then
             echo "$rule is no longer valid"
         fi

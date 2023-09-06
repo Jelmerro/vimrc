@@ -13,6 +13,7 @@
     },
     "plugins": [
         "jsdoc",
+        "padding-lines",
         "sort-keys"
     ],
     "root": true,
@@ -421,6 +422,85 @@
             "never"
         ],
         "padding-line-between-statements": "error",
+        "padding-lines/objects": "error",
+        "padding-lines/statements": [
+            "error",
+            {
+                "blankLine": "never",
+                "next": "*",
+                "prev": "*"
+            },
+            {
+                "blankLine": "always",
+                "next": [
+                    "var",
+                    "let",
+                    "const"
+                ],
+                "prev": "directive"
+            },
+            {
+                "blankLine": "always",
+                "next": [
+                    "var",
+                    "let",
+                    "const"
+                ],
+                "prev": "arrow"
+            },
+            {
+                "blankLine": "always",
+                "next": "arrow",
+                "prev": "arrow"
+            },
+            {
+                "blankLine": "always",
+                "next": "arrow",
+                "prev": [
+                    "var",
+                    "let",
+                    "const"
+                ]
+            },
+            {
+                "blankLine": "any",
+                "next": "*",
+                "prev": [
+                    "import",
+                    "cjs-import"
+                ]
+            },
+            {
+                "blankLine": "any",
+                "next": [
+                    "export",
+                    "cjs-export"
+                ],
+                "prev": "*"
+            },
+            {
+                "blankLine": "never",
+                "next": [
+                    "import",
+                    "cjs-import"
+                ],
+                "prev": [
+                    "import",
+                    "cjs-import"
+                ]
+            },
+            {
+                "blankLine": "never",
+                "next": [
+                    "export",
+                    "cjs-export"
+                ],
+                "prev": [
+                    "export",
+                    "cjs-export"
+                ]
+            }
+        ],
         "prefer-arrow-callback": "error",
         "prefer-const": "error",
         "prefer-destructuring": "error",

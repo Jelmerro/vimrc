@@ -23,6 +23,7 @@ eslint_packages=(
     eslint@latest
     eslint-plugin-jsdoc@latest
     eslint-plugin-sort-keys@latest
+    git+https://github.com/Jelmerro/eslint-plugin-padding-lines.git
 )
 
 # vim plugins installed in ~/.vim/pack/plugins/start
