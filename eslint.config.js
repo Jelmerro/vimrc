@@ -1,22 +1,27 @@
-{
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
-    "ignorePatterns": [
+"use strict"
+
+const globals = require("globals")
+const jsdoc = require("eslint-plugin-jsdoc")
+const paddingLines = require("eslint-plugin-padding-lines")
+const sortKeys = require("eslint-plugin-sort-keys")
+
+module.exports = {
+    "ignores": [
         "*.min.js",
         "*.lib.js"
     ],
-    "parserOptions": {
-        "ecmaVersion": 2023
+    "languageOptions": {
+        "globals": {
+            ...globals.browser,
+            ...globals.node,
+        },
+        "sourceType": "commonjs"
     },
-    "plugins": [
-        "jsdoc",
-        "padding-lines",
-        "sort-keys"
-    ],
-    "root": true,
+    "plugins": {
+        jsdoc,
+        "padding-lines": paddingLines,
+        "sort-keys": sortKeys
+    },
     "rules": {
         "accessor-pairs": [
             "error",

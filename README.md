@@ -56,7 +56,7 @@ but all linters and plugins will be installed by the script to these locations:
 
 - `~/.vim/` for all Vim configuration, including the vimrc
 - `~/.local/` and `~/node_modules/` for pip and npm packages (mostly linters)
-- `~/.eslintrc.json` contains the eslint config
+- `~/eslint.config.js` contains the eslint config
 - `~/.config/coc/` for all autocompletion related packages
 
 Optionally you can append `./install.sh` with 'clean' or 'config-only',
@@ -178,7 +178,7 @@ In normal or visual mode, these keybindings can be used:
 
 When uninstalling, the `uninstall.sh` script will do the following:
 
-- Delete `~/.vim/`, `~/.eslintrc.json` and `~/.config/coc/`
+- Delete `~/.vim/`, `~/eslint.config.js` and `~/.config/coc/`
 - Ask for each of the installed packages if you want to uninstall them
 
 # License
@@ -195,8 +195,9 @@ The referenced projects are covered by different licenses, check them out below.
 [autopep8](https://github.com/hhatto/autopep8),
 [bash-language-server](https://github.com/mads-hartmann/bash-language-server),
 [eslint](https://github.com/eslint/eslint),
-[eslint-plugin-react](https://github.com/vuejs/eslint-plugin-react),
-[eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue),
+[eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc),
+[eslint-plugin-sort-keys](https://github.com/namnm/eslint-plugin-sort-keys),
+[eslint-plugin-padding-lines](https://github.com/Jelmerro/eslint-plugin-padding-lines),
 [instant-markdown-d](https://github.com/suan/instant-markdown-d),
 [flake8](https://gitlab.com/pycqa/flake8),
 [pylint](https://github.com/PyCQA/pylint)

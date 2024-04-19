@@ -27,8 +27,8 @@ ask_removal() {
 title "Uninstall Vim configuration"
 read -rp "This will delete all Vim configuration, continue? [y/N] " uninstall
 case $uninstall in [Yy]|[Yy][Ee][Ss])
-    title "Deleting vimrc, vim plugins, eslintrc and coc packages completely..."
-    rm -rf ~/.vim/ ~/.config/coc/ ~/.eslintrc.json
+    title "Deleting vimrc, vim plugins, eslint config and coc packages..."
+    rm -rf ~/.vim/ ~/.config/coc/ ~/eslint.config.js
     title "Ask for individual package removal"
     for package in "${pip_packages[@]}";do
         ask_removal pip3 "$package"

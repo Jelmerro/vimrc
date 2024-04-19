@@ -112,7 +112,7 @@ setup() {
     subtitle "Copy config files"
     mkdir -p ~/.vim/spell/
     cd "$(dirname "$(realpath "$0")")" || exit
-    cp .eslintrc.json ~
+    cp eslint.config.js ~
     cp vimrc ~/.vim/vimrc
     cp nl.utf-8.spl ~/.vim/spell/nl.utf-8.spl
     cp coc-settings.json ~/.vim/coc-settings.json
