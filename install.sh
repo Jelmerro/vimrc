@@ -121,6 +121,7 @@ setup() {
     npm --loglevel=error i --force --no-audit --no-fund -g "${npm_packages[@]}"
     cd ~ || exit
     npm --loglevel=error i --force --no-audit --no-fund -D https://github.com/Jelmerro/eslint-config
+    npm dedup
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
