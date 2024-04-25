@@ -18,14 +18,6 @@ npm_packages=(
     instant-markdown-d@latest
 )
 
-# npm linting packages installed into ~/node_modules/
-eslint_packages=(
-    eslint@latest
-    eslint-plugin-jsdoc@latest
-    eslint-plugin-sort-keys@latest
-    git+https://github.com/Jelmerro/eslint-plugin-padding-lines.git
-)
-
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
     ap/vim-css-color
@@ -128,7 +120,7 @@ setup() {
     npm config set prefix "$HOME/.local"
     npm --loglevel=error i --force --no-audit --no-fund -g "${npm_packages[@]}"
     cd ~ || exit
-    npm --loglevel=error i --force --no-audit --no-fund -D "${eslint_packages[@]}"
+    npm --loglevel=error i --force --no-audit --no-fund -D https://github.com/Jelmerro/eslint-config
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do

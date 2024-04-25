@@ -194,10 +194,7 @@ The referenced projects are covered by different licenses, check them out below.
 
 [autopep8](https://github.com/hhatto/autopep8),
 [bash-language-server](https://github.com/mads-hartmann/bash-language-server),
-[eslint](https://github.com/eslint/eslint),
-[eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc),
-[eslint-plugin-sort-keys](https://github.com/namnm/eslint-plugin-sort-keys),
-[eslint-plugin-padding-lines](https://github.com/Jelmerro/eslint-plugin-padding-lines),
+[eslint-config](https://github.com/Jelmerro/eslint-config),
 [instant-markdown-d](https://github.com/suan/instant-markdown-d),
 [flake8](https://gitlab.com/pycqa/flake8),
 [pylint](https://github.com/PyCQA/pylint)
