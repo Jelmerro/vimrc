@@ -11,8 +11,8 @@ source ./install.sh
 # ask for removal of a pip or npm package
 ask_removal() {
     subtitle "$2"
-    read -rp "Do you want to uninstall $2 using $1? [y/N] " uninstall
-    case $uninstall in [Yy]|[Yy][Ee][Ss])
+    read -rp "Do you want to uninstall $2 using $1? [y/N] " confirm
+    case $confirm in [Yy]|[Yy][Ee][Ss])
         if [ "$1" == "pip3" ];then
             pip3 uninstall -y "$2"
         fi
@@ -24,20 +24,25 @@ ask_removal() {
     esac
 }
 
-title "Uninstall Vim configuration"
-read -rp "This will delete all Vim configuration, continue? [y/N] " uninstall
-case $uninstall in [Yy]|[Yy][Ee][Ss])
-    title "Deleting vimrc, vim plugins, eslint config and coc packages..."
-    rm -rf ~/.vim/ ~/.config/coc/ ~/eslint.config.js
-    title "Ask for individual package removal"
-    for package in "${pip_packages[@]}";do
-        ask_removal pip3 "$package"
-    done
-    npm config set prefix "$HOME/.local"
-    for package in "${npm_packages[@]}";do
-        ask_removal npm "$package"
-    done
-    for package in "${eslint_packages[@]}";do
-        ask_removal npm "$package"
-    done
-esac
+uninstall() {
+    title "Uninstall Vim configuration"
+    read -rp "This will delete all Vim configuration, continue? [y/N] " confirm
+    case $confirm in [Yy]|[Yy][Ee][Ss])
+        title "Deleting vimrc, vim plugins, eslint config and coc packages..."
+        rm -rf ~/.vim/ ~/.config/coc/ ~/eslint.config.js
+        title "Ask for individual package removal"
+        for package in "${pip_packages[@]}";do
+            ask_removal pip3 "$package"
+        done
+        npm config set prefix "$HOME/.local"
+        for package in "${npm_packages[@]}";do
+            ask_removal npm "$package"
+        done
+        ask_removal npm "eslint-config"
+    esac
+}
+
+# start the setup if called as script
+if [ "$0" = "${BASH_SOURCE[0]}" ];then
+    uninstall "$@"
+fi

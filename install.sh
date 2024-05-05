@@ -145,5 +145,5 @@ setup() {
 
 # start the setup if called as script
 if [ "$0" = "${BASH_SOURCE[0]}" ];then
-    setup "$1"
+    setup "$@"
 fi
