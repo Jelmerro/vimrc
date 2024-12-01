@@ -8,43 +8,11 @@ vimrc
 - Easy to install and expand with other plugins
 - Deterministic configuration, disables any system settings
 - Intelligent autocomplete using CoC
-- Linting with eslint, tsserver, flake8 and pylint (with config)
+- Linting with eslint, tsserver, flake8, pylint, shellcheck and shfmt
 - Improved syntax highlighting for JavaScript, React, Vue, SCSS and Pug
 - Fuzzy code and file search using FZF and ripgrep
 - Vim One theme everywhere in both light and dark shades
 - My vimrc to configure all of the above and more
-
-# Supported languages
-
-All languages supported by Vim are supported.
-These are all languages that are (somewhat) enhanced by using this vimrc:
-
-__Bash__, __CSS__, Docker, Handlebars, __HTML__, __JavaScript__, __JSON__, Less,
-__Markdown__, __Python__, Pug, Razor, React, Ren'Py, SCSS, Tailwind, TypeScript,
-Vue, Vim, XML, YAML.
-
-Languages in __bold__ are the main focus of this vimrc project.
-However, the install script can be easily expanded to change the list of plugins.
-
-# Dependencies
-
-These are the system packages that my vimrc depends on,
-none of which are installed automatically and some of which are optional.
-Linters and Vim plugins ARE installed by the `install.sh` script.
-
-## Required
-
-- Git
-- Vim 8 or higher
-- Python3 with Pip3
-- NodeJS with Npm
-
-## Optional
-
-- bat - for showing FZF previews with syntax colors instead of text-only
-- FZF (fzf) - for using any kind of fuzzy search commands, such as :Files
-- Ripgrep (rg) - for using the :Rg command to fuzzy search file contents
-- ShellCheck (shellcheck) - for linting sh/bash files for common errors
 
 # Install
 
@@ -55,12 +23,46 @@ The install script will ask you to install system packages manually,
 but all linters and plugins will be installed by the script to these locations:
 
 - `~/.vim/` for all Vim configuration, including the vimrc
-- `~/.local/` and `~/node_modules/` for pip and npm packages (mostly linters)
+- `~/.local/` and `~/node_modules/` for npm packages
+    - eslint, bash-language-server and instant-markdown-d
 - `~/eslint.config.js` contains the eslint config
 - `~/.config/coc/` for all autocompletion related packages
 
 Optionally you can append `./install.sh` with 'clean' or 'config-only',
 which will wipe the existing .vim folder or only install the config, respectively.
+
+## Optional
+
+These parts can optionally be installed to improve the experience for these languages.
+
+### FZF
+
+For fuzzy searching of any kind fzf is required, such as for `:Files`/`<leader>e`.
+To also fuzzy search in file contents, install Ripgrep and use `:Rg`/`<leader>r`.
+Finally, for showing file preview with syntax highlighting, install bat.
+
+### Python3
+
+Python is entirely optional, but highly recommended to improve Vim's Python features,
+as well as showing highlights, suggestions and diagnostics of Pyright in Vim.
+To also use additional linters and formatters, simply install them to make use of them,
+support is present for: autopep8, black, flake8, pylint, pyflakes, pyink and more.
+These can either be installed from system `python3-*` packages or via pip.
+
+### Bash
+
+Basic highlighting and suggestions are supported by the base install,
+but linting and formatting is provided via the NodeJS-driven LSP `bash-language-server`.
+This package is installed automatically at the moment via npm.
+
+- ShellCheck (shellcheck) - for linting sh/bash files (requires NodeJS for LSP)
+- shfmt - for formatting sh/bashf files (requires NodeJS for LSP)
+
+### Markdown
+
+Markdown highlighting and suggestions are supported by the base install,
+but web previews via `:MD` are provided by the NodeJS-driven LSP `instant-markdown-d`.
+This package is installed automatically at the moment via npm.
 
 # Features and usage
 
@@ -183,21 +185,36 @@ When uninstalling, the `uninstall.sh` script will do the following:
 
 # License
 
-ALL files in this repository are created by Jelmer van Arnhem.
-You can copy, share and modify them without limitation,
-see the UNLICENSE file for more details.
+All files in this repository are created by Jelmer van Arnhem.
+This project is released as free software via MIT, see LICENSE file for details.
 The referenced projects are covered by different licenses, check them out below.
 
 # Links to all referenced projects
 
-## Linters
+## Optional
+
+### FZF
+
+[fzf](https://github.com/junegunn/fzf),
+[bat](https://github.com/sharkdp/bat),
+[ripgrep](https://github.com/BurntSushi/ripgrep),
+
+### Python3
 
 [autopep8](https://github.com/hhatto/autopep8),
-[bash-language-server](https://github.com/mads-hartmann/bash-language-server),
 [eslint-config](https://github.com/Jelmerro/eslint-config),
-[instant-markdown-d](https://github.com/suan/instant-markdown-d),
 [flake8](https://gitlab.com/pycqa/flake8),
 [pylint](https://github.com/PyCQA/pylint)
+
+### Bash
+
+[shellcheck](https://github.com/koalaman/shellcheck),
+[shfmt](https://github.com/mvdan/sh)
+
+### Markdown
+
+[bash-language-server](https://github.com/mads-hartmann/bash-language-server),
+[instant-markdown-d](https://github.com/suan/instant-markdown-d),
 
 ## Vim plugins
 
@@ -243,10 +260,3 @@ The referenced projects are covered by different licenses, check them out below.
 [coc-vetur](https://github.com/neoclide/coc-vetur),
 [coc-vimlsp](https://github.com/iamcco/coc-vimlsp),
 [coc-yaml](https://github.com/neoclide/coc-yaml)
-
-## Other
-
-[bat](https://github.com/sharkdp/bat),
-[fzf](https://github.com/junegunn/fzf),
-[ripgrep](https://github.com/BurntSushi/ripgrep),
-[shellcheck](https://github.com/koalaman/shellcheck)

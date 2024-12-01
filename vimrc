@@ -2,7 +2,7 @@
 " Configure Vim with autocompletion, keybindings, editorconfig and linting
 " Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 " For updates and info go to https://github.com/Jelmerro/vimrc
-" This file is released into the public domain, see UNLICENSE file for details
+" This file is released as free software via MIT, see LICENSE file for details
 
 " General
 " ignore and reset distro specific configurations

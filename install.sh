@@ -3,14 +3,11 @@
 # Configure Vim with autocompletion, keybindings, editorconfig and linting
 # Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 # For updates and info go to https://github.com/Jelmerro/vimrc
-# This file is released into the public domain, see UNLICENSE file for details
+# This file is released as free software via MIT, see LICENSE file for details
 
 # packages that are required system-wide for development and for use in vim
-system_packages=(git node npm pip3 python3 vim)
-# highly recommended system packages are: rg fzf bat
-
-# pip linting packages installed into ~/.local
-pip_packages=(autopep8 flake8 pylint)
+system_packages=(git node npm vim)
+# highly recommended system packages are: rg fzf bat python3 shellcheck shfmt
 
 # global npm packages installed into ~/.local
 npm_packages=(
@@ -114,8 +111,6 @@ setup() {
     fi
 
     title "Install/update linters and parsers"
-    subtitle "Pip packages"
-    pip3 install --user -U "${pip_packages[@]}"
     subtitle "Npm packages"
     npm config set prefix "$HOME/.local"
     npm --loglevel=error i --force --no-audit --no-fund -g "${npm_packages[@]}"

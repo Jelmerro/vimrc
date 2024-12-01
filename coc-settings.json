@@ -20,7 +20,14 @@
         }
     },
     "pyright.disableDiagnostics": true,
+    "python.linting.banditEnabled": true,
     "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.prospectorEnabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pydocstyleEnabled": true,
+    "python.linting.pyflakesEnabled": true,
+    "python.linting.pylamaEnabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         "--disable=C0103",
@@ -35,5 +42,7 @@
         "--disable=W0621"
     ],
     "python.linting.pylintCategorySeverity.convention": "Hint",
+    "python.linting.pytypeEnabled": true,
+    "python.linting.ruffEnabled": true,
     "tailwindCSS.headwind.runOnSave": false
 }
