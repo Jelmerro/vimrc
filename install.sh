@@ -6,14 +6,8 @@
 # This file is released as free software via MIT, see LICENSE file for details
 
 # packages that are required system-wide for development and for use in vim
-system_packages=(git node npm vim)
+system_packages=(git npm vim)
 # highly recommended system packages are: rg fzf bat python3 shellcheck shfmt
-
-# global npm packages installed into ~/.local
-npm_packages=(
-    bash-language-server@latest
-    instant-markdown-d@latest
-)
 
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
@@ -96,12 +90,11 @@ setup() {
         fi
     done
     if [[ $1 = 'clean' ]];then
-        rm -rf ~/.vim/spell/ ~/.vim/pack/ ~/.vim/vimrc ~/.vim/coc-settings.json ~/.config/coc
+        rm -rf ~/.vim/spell/ ~/.vim/pack/ ~/.vim/vimrc ~/.vim/coc-settings.json ~/.config/coc/
     fi
     subtitle "Copy config files"
     mkdir -p ~/.vim/spell/
     cd "$(dirname "$(realpath "$0")")" || exit
-    cp eslint.config.js ~
     cp vimrc ~/.vim/vimrc
     cp nl.utf-8.spl ~/.vim/spell/nl.utf-8.spl
     cp coc-settings.json ~/.vim/coc-settings.json
@@ -109,14 +102,6 @@ setup() {
         title "Done"
         exit
     fi
-
-    title "Install/update linters and parsers"
-    subtitle "Npm packages"
-    npm config set prefix "$HOME/.local"
-    npm --loglevel=error i --force --no-audit --no-fund -g "${npm_packages[@]}"
-    cd ~ || exit
-    npm --loglevel=error i --force --no-audit --no-fund -D https://github.com/Jelmerro/eslint-config
-    npm dedup
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do

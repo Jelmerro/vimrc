@@ -23,9 +23,6 @@ The install script will ask you to install system packages manually,
 but all linters and plugins will be installed by the script to these locations:
 
 - `~/.vim/` for all Vim configuration, including the vimrc
-- `~/.local/` and `~/node_modules/` for npm packages
-    - eslint, bash-language-server and instant-markdown-d
-- `~/eslint.config.js` contains the eslint config
 - `~/.config/coc/` for all autocompletion related packages
 
 Optionally you can append `./install.sh` with 'clean' or 'config-only',
@@ -33,7 +30,7 @@ which will wipe the existing .vim folder or only install the config, respectivel
 
 ## Optional
 
-These parts can optionally be installed to improve the experience for these languages.
+These parts can optionally be installed to improve the experience for these domains.
 
 ### FZF
 
@@ -47,13 +44,14 @@ Python is entirely optional, but highly recommended to improve Vim's Python feat
 as well as showing highlights, suggestions and diagnostics of Pyright in Vim.
 To also use additional linters and formatters, simply install them to make use of them,
 support is present for: autopep8, black, flake8, pylint, pyflakes, pyink and more.
-These can either be installed from system `python3-*` packages or via pip.
+These can either be installed from system `python3-*` packages or via pip,
+such as `sudo dnf install python3-pylint` or `pip install --user flake8`.
 
 ### Bash
 
 Basic highlighting and suggestions are supported by the base install,
 but linting and formatting is provided via the NodeJS-driven LSP `bash-language-server`.
-This package is installed automatically at the moment via npm.
+This package can be installed via npm using `npm i -g bash-language-server@latest`.
 
 - ShellCheck (shellcheck) - for linting sh/bash files (requires NodeJS for LSP)
 - shfmt - for formatting sh/bashf files (requires NodeJS for LSP)
@@ -62,7 +60,16 @@ This package is installed automatically at the moment via npm.
 
 Markdown highlighting and suggestions are supported by the base install,
 but web previews via `:MD` are provided by the NodeJS-driven LSP `instant-markdown-d`.
-This package is installed automatically at the moment via npm.
+This package can be installed via npm using `npm i -g instant-markdown-d@latest`.
+
+### NodeJS
+
+While NodeJS itself is required to install CoC's LSP plugins to `~/.config/coc`,
+there are other recommended optional NodeJS related packages and tools.
+The packages mentioned above for Bash and Markdown tooling are highly recommended,
+so be sure to set your npm prefix to a user writable place: `npm config set prefix $HOME/.local`.
+For linting, you can install the eslint npm package inside specific projects,
+be sure to check out my [eslint-config](https://github.com/Jelmerro/eslint-config) for it.
 
 # Features and usage
 
@@ -178,10 +185,13 @@ In normal or visual mode, these keybindings can be used:
 
 # Uninstall
 
-When uninstalling, the `uninstall.sh` script will do the following:
+The `uninstall.sh` script will simply delete the following locations:
 
-- Delete `~/.vim/`, `~/eslint.config.js` and `~/.config/coc/`
-- Ask for each of the installed packages if you want to uninstall them
+- `~/.vim/spell/`
+- `~/.vim/pack/`
+- `~/.vim/vimrc`
+- `~/.vim/coc-settings.json`
+- `~/.config/coc/`
 
 # License
 
@@ -193,16 +203,19 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Optional
 
+### NodeJS
+
+[eslint-config](https://github.com/Jelmerro/eslint-config)
+
 ### FZF
 
 [fzf](https://github.com/junegunn/fzf),
 [bat](https://github.com/sharkdp/bat),
-[ripgrep](https://github.com/BurntSushi/ripgrep),
+[ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ### Python3
 
 [autopep8](https://github.com/hhatto/autopep8),
-[eslint-config](https://github.com/Jelmerro/eslint-config),
 [flake8](https://gitlab.com/pycqa/flake8),
 [pylint](https://github.com/PyCQA/pylint)
 
@@ -214,7 +227,7 @@ The referenced projects are covered by different licenses, check them out below.
 ### Markdown
 
 [bash-language-server](https://github.com/mads-hartmann/bash-language-server),
-[instant-markdown-d](https://github.com/suan/instant-markdown-d),
+[instant-markdown-d](https://github.com/suan/instant-markdown-d)
 
 ## Vim plugins
 
@@ -236,7 +249,7 @@ The referenced projects are covered by different licenses, check them out below.
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive),
 [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline),
-[vim-ide/scss-syntax.vim](https://github.com/vim-ide/scss-syntax.vim)
+[vim-ide/scss-syntax.vim](https://github.com/vim-ide/scss-syntax.vim),
 [wellle/context.vim](https://github.com/wellle/context.vim)
 
 ## CoC extensions
