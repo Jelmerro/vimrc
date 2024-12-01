@@ -1,11 +1,9 @@
 {
     "eslint.format.enable": true,
-    "javascript.format.enable": false,
-    "javascript.validate.enable": true,
-    "typescript.format.enable": false,
-    "typescript.validate.enable": true,
     "html.autoClosingTags": false,
     "html.autoCreateQuotes": false,
+    "javascript.format.enable": false,
+    "javascript.validate.enable": true,
     "languageserver": {
         "bash": {
             "args": [
@@ -20,6 +18,9 @@
         }
     },
     "pyright.disableDiagnostics": true,
+    "pyright.inlayHints.functionReturnTypes": false,
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.parameterTypes": false,
     "python.linting.banditEnabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
@@ -28,7 +29,6 @@
     "python.linting.pydocstyleEnabled": true,
     "python.linting.pyflakesEnabled": true,
     "python.linting.pylamaEnabled": true,
-    "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         "--disable=C0103",
         "--disable=C0112",
@@ -42,7 +42,10 @@
         "--disable=W0621"
     ],
     "python.linting.pylintCategorySeverity.convention": "Hint",
+    "python.linting.pylintEnabled": true,
     "python.linting.pytypeEnabled": true,
     "python.linting.ruffEnabled": true,
-    "tailwindCSS.headwind.runOnSave": false
+    "tailwindCSS.headwind.runOnSave": false,
+    "typescript.format.enable": false,
+    "typescript.validate.enable": true
 }
