@@ -122,11 +122,11 @@ Git difference is displayed as a single character, such as `+`, `.` or `~`.
 
 This plugin is also used for autocompletion, which will show automatically in insert mode.
 Suggestions are never automatically applied, but you can select them with `<c-n>` and `<c-p>`.
-You can then immediately continue typing without needing to press anything else.
-The only exception is made for snippets, which do need to be expanded with Tab.
-Unlike other configurations, the Tab key can not be used to modify whitespace,
-with this vimrc we use Vim's regular `<c-d>` and `<c-t>` to do so.
-Or `<<` and `>>` to do the same outside of insert mode.
+You can then immediately continue typing without needing to press anything else,
+though you can also choose to expand the snippet or auto-import using the Tab key.
+While in insert mode, the Tab key can not be used to modify whitespace,
+please use Vim's regular `<c-d>` and `<c-t>` to do so.
+The Tab key can be used in normal mode, as can `<<` and `>>` to modify whitespace.
 
 ### Editorconfig
 

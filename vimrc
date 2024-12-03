@@ -105,7 +105,7 @@ function! s:auto_format()
     if index(['js', 'jsx', 'javascript', 'javascriptreact', 'ts', 'typescript', 'typescriptcommon', 'typescriptreact'], &filetype) >= 0
         silent! CocCommand eslint.executeAutofix
     else
-        call CocAction('format')
+        call CocActionAsync('format')
     endif
 endfunction
 noremap <silent> <leader>f :call <SID>auto_format()<cr>
@@ -118,7 +118,7 @@ function! s:show_documentation()
     if index(['vim','help'], &filetype) >= 0
         execute 'h '.expand('<cword>')
     else
-        call CocAction('doHover')
+        call CocActionAsync('doHover')
     endif
 endfunction
 noremap <silent> K :call <SID>show_documentation()<cr>
@@ -148,9 +148,14 @@ function s:scroll_cursor_popup(down)
 endfunction
 imap <expr> <C-f> <SID>scroll_cursor_popup(1) ? '' : ''
 imap <expr> <C-b> <SID>scroll_cursor_popup(-1) ? '' : ''
-" expand snippet suggestion
+" expand snippets, completion or copilot with tab key based on selection
+nmap <S-Tab> <<
+nmap <Tab> >>
 imap <silent> <S-Tab> <Nop>
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#_select_confirm() : ""
+let g:copilot_no_tab_map = v:true
+inoremap <silent><expr> <Tab>
+      \ coc#pum#has_item_selected() ? coc#_select_confirm() :
+      \ exists('b:_copilot.suggestions') ? copilot#Accept("\<CR>") : ""
 " automatically fix diagnostics aor refactor
 noremap <silent> <leader>d :CocList diagnostics<cr>
 nmap <leader>c <Plug>(coc-codeaction)
