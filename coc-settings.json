@@ -1,4 +1,8 @@
 {
+    "diagnostic.virtualText": true,
+    "diagnostic.enableMessage": "never",
+    "diagnostic.virtualTextFormat": "%source%code %message",
+    "diagnostic.virtualTextCurrentLineOnly": false,
     "eslint.format.enable": true,
     "html.autoClosingTags": false,
     "html.autoCreateQuotes": false,
