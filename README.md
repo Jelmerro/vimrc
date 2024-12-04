@@ -16,16 +16,17 @@ vimrc
 # Install
 
 To install my vimrc and related config, use the `install.sh` script.
-The script has been tested to work on a variety of Linux distributions,
-and PRs are encouraged to broaden the support for other platforms.
-The install script will ask you to install system packages manually,
-but all linters and plugins will be installed by the script to these locations:
+The install script requires either curl+tar or git for downloading vim packages,
+but pretty much all dependencies are optional and listed in the paragraphs below.
+All files will be installed by the script to these locations:
 
 - `~/.vim/` for all Vim configuration, including the vimrc
 - `~/.config/coc/` for all autocompletion related packages
 
 Optionally you can append `./install.sh` with 'clean' or 'config-only',
 which will wipe the existing .vim folder or only install the config, respectively.
+If npm is missing, no CoC packages will be installed and LSP will be unavailable.
+Finally, you can supply 'no-lsp' to skip this step even if npm is installed.
 
 ## Optional
 
@@ -34,7 +35,7 @@ These parts can optionally be installed to improve the experience for these doma
 ### FZF
 
 For fuzzy searching of any kind fzf is required, such as for `:Files`/`<leader>e`.
-To also fuzzy search in file contents, install Ripgrep and use `:Rg`/`<leader>r`.
+To also fuzzy search in file contents, install ripgrep and use `:Rg`/`<leader>r`.
 Finally, for showing file preview with syntax highlighting, install bat.
 
 ### Python3
@@ -63,8 +64,9 @@ This package can be installed via npm using `npm i -g instant-markdown-d@latest`
 
 ### NodeJS
 
-While NodeJS itself is required to install CoC's LSP plugins to `~/.config/coc`,
-there are other recommended optional NodeJS related packages and tools.
+While NodeJS itself is recommended to install CoC's LSP plugins to `~/.config/coc`,
+it is not strictly required by the install script to use this vimrc config.
+If npm is not found, LSP plugins are skipped as is the CoC package installation.
 The packages mentioned above for Bash and Markdown tooling are highly recommended,
 so be sure to set your npm prefix to a user writable place: `npm config set prefix $HOME/.local`.
 For linting, you can install the eslint npm package inside specific projects,
@@ -202,10 +204,6 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## Optional
 
-### NodeJS
-
-[eslint-config](https://github.com/Jelmerro/eslint-config)
-
 ### FZF
 
 [fzf](https://github.com/junegunn/fzf),
@@ -227,6 +225,10 @@ The referenced projects are covered by different licenses, check them out below.
 
 [bash-language-server](https://github.com/mads-hartmann/bash-language-server),
 [instant-markdown-d](https://github.com/suan/instant-markdown-d)
+
+### NodeJS
+
+[eslint-config](https://github.com/Jelmerro/eslint-config)
 
 ## Vim plugins
 

@@ -4,10 +4,6 @@
 # For updates and info go to https://github.com/Jelmerro/vimrc
 # This file is released as free software via MIT, see LICENSE file for details
 
-# packages that are required system-wide for development and for use in vim
-system_packages=(git npm vim)
-# highly recommended system packages are: rg fzf bat python3 shellcheck shfmt
-
 # vim plugins installed in ~/.vim/pack/plugins/start
 vim_plugins=(
     ap/vim-css-color
@@ -18,7 +14,6 @@ vim_plugins=(
     laggardkernel/vim-one
     lambdalisue/suda.vim
     mbbill/undotree
-    "neoclide/coc.nvim release"
     pangloss/vim-javascript
     RRethy/vim-illuminate
     suan/vim-instant-markdown
@@ -51,36 +46,48 @@ plugin() {
     subtitle "$1"
     mkdir -p ~/.vim/pack/plugins/start
     cd ~/.vim/pack/plugins/start || exit
-    if [ ! -d "$(basename "$1")" ];then
-        git clone "https://github.com/$1"
+    folder=$(basename "$1")
+    if which git 1>/dev/null 2>/dev/null;then
+        if [ ! -d "$folder" ];then
+            git clone "https://github.com/$1"
+        fi
+        cd "$folder" || exit
+        if [ -n "$2" ];then
+            git checkout "$2"
+        fi
+        git pull --all
+        return 0
     fi
-    cd "$(basename "$1")" || exit
-    if [ -n "$2" ];then
-        git checkout "$2"
+    if which tar 1>/dev/null 2>/dev/null;then
+        if which curl 1>/dev/null 2>/dev/null;then
+            rm -rf "$folder"
+            if [ -n "$2" ];then
+                curl -sSL "https://github.com/$1/archive/$2.tar.gz" | tar xzf - --one-top-level="$folder" --strip-components 1
+            else
+                curl -sSL "https://api.github.com/repos/$1/tarball" | tar xzf - --one-top-level="$folder" --strip-components 1
+            fi
+            return 0
+        fi
     fi
-    git pull --all
+    echo "Can't download vim plugin because either git or curl+tar are required"
+    return 1
 }
 
 setup() {
     title "Jelmerro's Vim installation script"
     echo "See https://github.com/Jelmerro/vimrc for info and updates"
-    subtitle "Check required system software"
-    for software in "${system_packages[@]}";do
-        which "$software"
-        if [ $? == 1 ];then
-            echo "$software should be installed on your system"
-            exit
-        fi
-    done
     if [[ $1 = 'clean' ]];then
         rm -rf ~/.vim/spell/ ~/.vim/pack/ ~/.vim/vimrc ~/.vim/coc-settings.json ~/.config/coc/
     fi
+
     subtitle "Copy config files"
     mkdir -p ~/.vim/spell/
     cd "$(dirname "$(realpath "$0")")" || exit
     cp vimrc ~/.vim/vimrc
     cp nl.utf-8.spl ~/.vim/spell/nl.utf-8.spl
-    cp coc-settings.json ~/.vim/coc-settings.json
+    if which npm 1>/dev/null 2>/dev/null;then
+        cp coc-settings.json ~/.vim/coc-settings.json
+    fi
     if [[ $1 = 'config-only' ]];then
         title "Done"
         exit
@@ -88,17 +95,26 @@ setup() {
 
     title "Install/update Vim plugins"
     for plug in "${vim_plugins[@]}";do
-        # shellcheck disable=SC2086
-        plugin $plug
+        plugin "$plug"
     done
 
+    if [[ $1 = 'no-lsp' ]];then
+        title "Done"
+        exit
+    fi
+
     title "Install/update CoC extensions"
-    mkdir -p ~/.config/coc/extensions
-    cd ~/.config/coc || exit
-    echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
-    cd ~/.config/coc/extensions || exit
-    echo '{"dependencies":{}}' > package.json
-    npm --install-strategy nested --loglevel=error --force --ignore-scripts --only=prod --no-audit --no-fund i "${coc_packages[@]}"
+    if which npm 1>/dev/null 2>/dev/null;then
+        plugin "neoclide/coc.nvim" "release"
+        mkdir -p ~/.config/coc/extensions
+        cd ~/.config/coc || exit
+        echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
+        cd ~/.config/coc/extensions || exit
+        echo '{"dependencies":{}}' > package.json
+        npm --install-strategy nested --loglevel=error --force --ignore-scripts --only=prod --no-audit --no-fund i "${coc_packages[@]}"
+    else
+        echo "Skipping CoC installation because npm is missing"
+    fi
     title "Done"
 }
 
