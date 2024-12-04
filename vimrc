@@ -191,12 +191,13 @@ endfunction
 command! MD call s:markdown_preview()
 
 " One theme
+" enable gui colors and italics, which look nicer if supported
+set termguicolors
+let g:one_allow_italics = 1
 " load and use the one theme by default dark
 colorscheme evening
 silent! colorscheme one
-" enable gui colors in the terminal, which looks nicer if supported
-set termguicolors
-" explicitly set the airline color theme
+" explicitly set the airline color theme if present
 silent! AirlineTheme one
 " automatically update missing features of theme when switching between shades
 function! s:toggleTheme()
