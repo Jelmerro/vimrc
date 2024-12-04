@@ -124,9 +124,9 @@ This plugin is also used for autocompletion, which will show automatically in in
 Suggestions are never automatically applied, but you can select them with `<c-n>` and `<c-p>`.
 You can then immediately continue typing without needing to press anything else,
 though you can also choose to expand the snippet or auto-import using the Tab key.
-While in insert mode, the Tab key can not be used to modify whitespace,
-please use Vim's regular `<c-d>` and `<c-t>` to do so.
-The Tab key can be used in normal mode, as can `<<` and `>>` to modify whitespace.
+The Tab key can not be used to modify whitespace as this would conflict with `<c-i>`,
+please use Vim's regular `<c-d>` and `<c-t>` to do so inside insert mode.
+Outside of insert mode you can use `<<` and `>>` to do the same thing.
 
 ### Editorconfig
 
@@ -234,7 +234,6 @@ The referenced projects are covered by different licenses, check them out below.
 [ap/vim-css-color](https://github.com/ap/vim-css-color),
 [chaimleib/vim-renpy](https://github.com/chaimleib/vim-renpy),
 [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
-[digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [laggardkernel/vim-one](https://github.com/laggardkernel/vim-one),
@@ -249,7 +248,6 @@ The referenced projects are covered by different licenses, check them out below.
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive),
 [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline),
-[vim-ide/scss-syntax.vim](https://github.com/vim-ide/scss-syntax.vim),
 [wellle/context.vim](https://github.com/wellle/context.vim)
 
 ## CoC extensions

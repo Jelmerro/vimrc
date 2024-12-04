@@ -148,8 +148,6 @@ endfunction
 imap <expr> <C-f> <SID>scroll_cursor_popup(1) ? '' : ''
 imap <expr> <C-b> <SID>scroll_cursor_popup(-1) ? '' : ''
 " expand snippets, completion or copilot with tab key based on selection
-nmap <S-Tab> <<
-nmap <Tab> >>
 imap <silent> <S-Tab> <Nop>
 let g:copilot_no_tab_map = v:true
 inoremap <silent><expr> <Tab>

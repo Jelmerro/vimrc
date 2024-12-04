@@ -13,7 +13,6 @@ vim_plugins=(
     ap/vim-css-color
     chaimleib/vim-renpy
     editorconfig/editorconfig-vim
-    digitaltoad/vim-pug
     honza/vim-snippets
     junegunn/fzf
     junegunn/fzf.vim
@@ -29,7 +28,6 @@ vim_plugins=(
     tomtom/tcomment_vim
     tpope/vim-fugitive
     vim-airline/vim-airline
-    vim-ide/scss-syntax.vim
     wellle/context.vim
 )
 
