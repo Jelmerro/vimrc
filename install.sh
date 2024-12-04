@@ -12,7 +12,6 @@ vim_plugins=(
     junegunn/fzf
     junegunn/fzf.vim
     laggardkernel/vim-one
-    lambdalisue/suda.vim
     mbbill/undotree
     pangloss/vim-javascript
     RRethy/vim-illuminate

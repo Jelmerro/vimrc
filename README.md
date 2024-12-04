@@ -163,11 +163,6 @@ Outside of insert mode you can use `<<` and `>>` to do the same thing.
 - A collection of snippets that will be suggested by CoC
 - Use the Tab key to expand the highlighted snippet
 
-### Suda
-
-- Allows you to save files that are owned by root
-- Opens a copy and asks for sudo user password confirmation on write
-
 ### TComment
 
 In normal or visual mode, these keybindings can be used:
@@ -237,7 +232,6 @@ The referenced projects are covered by different licenses, check them out below.
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [laggardkernel/vim-one](https://github.com/laggardkernel/vim-one),
-[lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
 [mbbill/undotree](https://github.com/mbbill/undotree),
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),

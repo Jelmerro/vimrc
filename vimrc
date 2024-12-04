@@ -242,10 +242,6 @@ augroup END
 set background=dark
 call <SID>updateTheme()
 
-" Suda
-" automatically open root owned files with sudo
-let g:suda_smart_edit=1
-
 " TComment
 " don't set the default bindings
 let g:tcomment_maps=0
