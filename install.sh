@@ -18,11 +18,9 @@ vim_plugins=(
     junegunn/fzf.vim
     laggardkernel/vim-one
     lambdalisue/suda.vim
-    MaxMEllon/vim-jsx-pretty
     mbbill/undotree
     "neoclide/coc.nvim release"
     pangloss/vim-javascript
-    posva/vim-vue
     RRethy/vim-illuminate
     suan/vim-instant-markdown
     tomtom/tcomment_vim
@@ -39,7 +37,6 @@ coc_packages=(
     coc-highlight@latest
     coc-html@latest
     coc-json@latest
-    coc-markdownlint@latest
     coc-pyright@latest
     coc-snippets@latest
     coc-tsserver@latest

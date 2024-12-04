@@ -9,7 +9,6 @@ vimrc
 - Deterministic configuration, disables any system settings
 - Intelligent autocomplete using CoC
 - Linting with eslint, tsserver, flake8, pylint, shellcheck and shfmt
-- Improved syntax highlighting for JavaScript, React, Vue, SCSS and Pug
 - Fuzzy code and file search using FZF and ripgrep
 - Vim One theme everywhere in both light and dark shades
 - My vimrc to configure all of the above and more
@@ -238,11 +237,9 @@ The referenced projects are covered by different licenses, check them out below.
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [laggardkernel/vim-one](https://github.com/laggardkernel/vim-one),
 [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim),
-[MaxMEllon/vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty),
-[neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [mbbill/undotree](https://github.com/mbbill/undotree),
+[neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
-[posva/vim-vue](https://github.com/posva/vim-vue),
 [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate),
 [suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown),
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),
@@ -258,7 +255,6 @@ The referenced projects are covered by different licenses, check them out below.
 [coc-highlight](https://github.com/neoclide/coc-highlight),
 [coc-html](https://github.com/neoclide/coc-html),
 [coc-json](https://github.com/neoclide/coc-json),
-[coc-markdownlint](https://github.com/fannheyward/coc-markdownlint),
 [coc-pyright](https://github.com/fannheyward/coc-pyright),
 [coc-snippets](https://github.com/neoclide/coc-snippets),
 [coc-tsserver](https://github.com/neoclide/coc-tsserver),
