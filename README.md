@@ -232,7 +232,6 @@ The referenced projects are covered by different licenses, check them out below.
 
 [ap/vim-css-color](https://github.com/ap/vim-css-color),
 [chaimleib/vim-renpy](https://github.com/chaimleib/vim-renpy),
-[editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim),
 [honza/vim-snippets](https://github.com/honza/vim-snippets),
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim),
 [laggardkernel/vim-one](https://github.com/laggardkernel/vim-one),

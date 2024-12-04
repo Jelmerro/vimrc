@@ -12,7 +12,6 @@ system_packages=(git npm vim)
 vim_plugins=(
     ap/vim-css-color
     chaimleib/vim-renpy
-    editorconfig/editorconfig-vim
     honza/vim-snippets
     junegunn/fzf
     junegunn/fzf.vim

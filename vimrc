@@ -46,6 +46,8 @@ let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascrip
 " find matching tags in html/xml documents using matchit
 filetype plugin on
 packadd! matchit
+" enable vim's internal editorconfig
+packadd! editorconfig
 " disable super buggy netrw
 let g:loaded_netrw=1
 let g:netrw_loaded_netrwPlugin=1
