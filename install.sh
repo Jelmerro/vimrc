@@ -98,11 +98,7 @@ setup() {
     echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
     cd ~/.config/coc/extensions || exit
     echo '{"dependencies":{}}' > package.json
-    npm --loglevel=error i --force --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund "${coc_packages[@]}"
-    for package in "${coc_packages[@]}";do
-        cd "$HOME/.config/coc/extensions/node_modules/${package%%@*}" || continue
-        npm --loglevel=error i --force --ignore-scripts --only=prod --no-audit --no-fund
-    done
+    npm --install-strategy nested --loglevel=error --force --ignore-scripts --only=prod --no-audit --no-fund i "${coc_packages[@]}"
     title "Done"
 }
 
