@@ -192,11 +192,12 @@ command! MD call s:markdown_preview()
 
 " One theme
 " load and use the one theme by default dark
-colorscheme one
+colorscheme evening
+silent! colorscheme one
 " enable gui colors in the terminal, which looks nicer if supported
 set termguicolors
 " explicitly set the airline color theme
-let g:airline_theme = 'one'
+silent! AirlineTheme one
 " automatically update missing features of theme when switching between shades
 function! s:toggleTheme()
     if &background == 'light'
@@ -210,6 +211,8 @@ augroup theme
     autocmd!
     function! s:updateTheme()
         if &background == 'light'
+            " set normal colors explicitly for better colors without vim-one
+            hi Normal guifg=#494b53 guibg=#fafafa ctermfg=23 ctermbg=255
             " show illuminated words in a slightly darker gray compared to bg
             hi illuminatedWord guibg=#e6e6e6 ctermbg=238
             " match the fzf preview (bat) with the current shade
@@ -219,6 +222,8 @@ augroup theme
             hi SpellRare guifg=NONE guibg=#ffeecc guisp=NONE gui=NONE ctermfg=NONE ctermbg=223 cterm=NONE
             hi SpellCap guifg=NONE guibg=#cceeff guisp=NONE gui=NONE ctermfg=NONE ctermbg=195 cterm=NONE
         else
+            " set normal colors explicitly for better colors without vim-one
+            hi Normal guifg=#abb2bf guibg=#282c34 ctermfg=145 ctermbg=16
             " show illuminated words in a slightly lighter gray compared to bg
             hi illuminatedWord guibg=#444444 ctermbg=238
             " match the fzf preview (bat) with the current shade
