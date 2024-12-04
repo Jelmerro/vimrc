@@ -49,7 +49,6 @@
     "python.linting.pylintEnabled": true,
     "python.linting.pytypeEnabled": true,
     "python.linting.ruffEnabled": true,
-    "tailwindCSS.headwind.runOnSave": false,
     "typescript.format.enable": false,
     "typescript.validate.enable": true
 }

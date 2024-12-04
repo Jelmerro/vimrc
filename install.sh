@@ -1,7 +1,6 @@
 #!/bin/bash
 # Jelmerro's Vim configuration
 # Configure Vim with autocompletion, keybindings, editorconfig and linting
-# Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 # For updates and info go to https://github.com/Jelmerro/vimrc
 # This file is released as free software via MIT, see LICENSE file for details
 
@@ -37,26 +36,16 @@ vim_plugins=(
 # coc plugin with extensions installed by npm into ~/.config/coc/extensions
 coc_packages=(
     coc-css@latest
-    coc-dictionary@latest
-    coc-docker@latest
-    coc-emoji@latest
     coc-eslint@latest
     coc-git@latest
     coc-highlight@latest
     coc-html@latest
-    coc-jedi@latest
     coc-json@latest
     coc-markdownlint@latest
     coc-pyright@latest
-    coc-react-refactor@latest
     coc-snippets@latest
-    coc-syntax@latest
-    coc-tailwindcss@latest
     coc-tsserver@latest
-    coc-vetur@latest
     coc-vimlsp@latest
-    coc-word@latest
-    coc-yaml@latest
 )
 
 # show colorful titles for installation steps

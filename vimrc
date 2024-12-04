@@ -1,6 +1,5 @@
 " Jelmerro's Vim configuration
 " Configure Vim with autocompletion, keybindings, editorconfig and linting
-" Suitable for Python, JavaScript, React, Vue, Bash, Docker and related files
 " For updates and info go to https://github.com/Jelmerro/vimrc
 " This file is released as free software via MIT, see LICENSE file for details
 
@@ -156,7 +155,7 @@ let g:copilot_no_tab_map = v:true
 inoremap <silent><expr> <Tab>
       \ coc#pum#has_item_selected() ? coc#_select_confirm() :
       \ exists('b:_copilot.suggestions') ? copilot#Accept("\<CR>") : ""
-" automatically fix diagnostics aor refactor
+" automatically fix diagnostics and/or refactor
 noremap <silent> <leader>d :CocList diagnostics<cr>
 nmap <leader>c <Plug>(coc-codeaction)
 xmap <leader>c <Plug>(coc-codeaction-selected)

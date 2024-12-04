@@ -255,21 +255,13 @@ The referenced projects are covered by different licenses, check them out below.
 ## CoC extensions
 
 [coc-css](https://github.com/neoclide/coc-css),
-[coc-docker](https://github.com/josa42/coc-docker),
 [coc-eslint](https://github.com/neoclide/coc-eslint),
 [coc-git](https://github.com/neoclide/coc-git),
 [coc-highlight](https://github.com/neoclide/coc-highlight),
 [coc-html](https://github.com/neoclide/coc-html),
-[coc-jedi](https://github.com/pappasam/coc-jedi),
 [coc-json](https://github.com/neoclide/coc-json),
 [coc-markdownlint](https://github.com/fannheyward/coc-markdownlint),
 [coc-pyright](https://github.com/fannheyward/coc-pyright),
-[coc-react-refactor](https://github.com/neoclide/coc-react-refactor),
 [coc-snippets](https://github.com/neoclide/coc-snippets),
-[coc-sources](https://github.com/neoclide/coc-sources),
-[coc-syntax](https://github.com/neoclide/coc-sources),
-[coc-tailwindcss](https://github.com/iamcco/coc-tailwindcss),
 [coc-tsserver](https://github.com/neoclide/coc-tsserver),
-[coc-vetur](https://github.com/neoclide/coc-vetur),
-[coc-vimlsp](https://github.com/iamcco/coc-vimlsp),
-[coc-yaml](https://github.com/neoclide/coc-yaml)
+[coc-vimlsp](https://github.com/iamcco/coc-vimlsp)
