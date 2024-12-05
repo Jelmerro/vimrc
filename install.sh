@@ -37,8 +37,8 @@ coc_packages=(
 )
 
 # show colorful titles for installation steps
-title() { echo -e "\n\x1b[31m === \x1b[32m$1\x1b[0m\n"; }
-subtitle() { echo -e "\n\x1b[31m - \x1b[33m$1\x1b[0m\n"; }
+title() { echo -e "\x1b[31m === \x1b[32m$1\x1b[0m"; }
+subtitle() { echo -e "\x1b[31m - \x1b[33m$1\x1b[0m"; }
 
 # clone and update a plugin in the vim/pack directory
 plugin() {
@@ -47,8 +47,15 @@ plugin() {
     cd ~/.vim/pack/plugins/start || exit
     folder=$(basename "$1")
     if which git 1>/dev/null 2>/dev/null;then
+        if [ -d "$folder" ] && [ ! -d "$folder/.git" ];then
+            rm -rf "$folder"
+        fi
         if [ ! -d "$folder" ];then
-            git clone "https://github.com/$1"
+            if [ -n "$2" ];then
+                git clone -b "$2" --depth 1 "https://github.com/$1"
+            else
+                git clone --depth 1 "https://github.com/$1"
+            fi
         fi
         cd "$folder" || exit
         if [ -n "$2" ];then
@@ -68,13 +75,13 @@ plugin() {
             return 0
         fi
     fi
-    echo "Can't download vim plugin because either git or curl+tar are required"
+    subtitle "Can't download vim plugin because either git or curl+tar are required"
     return 1
 }
 
 setup() {
     title "Jelmerro's Vim installation script"
-    echo "See https://github.com/Jelmerro/vimrc for info and updates"
+    subtitle "See https://github.com/Jelmerro/vimrc for info and updates"
     if [[ $1 = 'clean' ]];then
         rm -rf ~/.vim/spell/ ~/.vim/pack/ ~/.vim/vimrc ~/.vim/coc-settings.json ~/.config/coc/
     fi
@@ -112,7 +119,7 @@ setup() {
         echo '{"dependencies":{}}' > package.json
         npm --install-strategy nested --loglevel=error --force --ignore-scripts --only=prod --no-audit --no-fund i "${coc_packages[@]}"
     else
-        echo "Skipping CoC installation because npm is missing"
+        subtitle "Skipping CoC installation because npm is missing"
     fi
     title "Done"
 }
