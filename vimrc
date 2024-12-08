@@ -21,6 +21,8 @@ set cursorline
 set cursorlineopt=number
 " color column for optimal line length
 set colorcolumn=80
+" remove character limit for syntax highlighting
+set synmaxcol=0
 " display line numbers
 set number
 " enable smart auto indentation

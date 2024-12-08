@@ -142,7 +142,7 @@ Outside of insert mode you can use `<<` and `>>` to do the same thing.
 
 ### Fugitive
 
-- Use many commands such as :Gblame or :Gdiffsplit to access git within Vim
+- Use many commands such as :G blame or :Gdiffsplit to access git within Vim
 
 ### Illuminate
 
