@@ -4,8 +4,7 @@
 # For updates and info go to https://github.com/Jelmerro/vimrc
 # This file is released as free software via MIT, see LICENSE file for details
 
-# load package lists and functions from install script
-source ./install.sh
+title() { echo -e "\x1b[31m === \x1b[32m$1\x1b[0m"; }
 
 uninstall() {
     title "Uninstall Vim configuration"
@@ -16,7 +15,7 @@ uninstall() {
     esac
 }
 
-# start the setup if called as script
+# uninstall only if called as a script
 if [ "$0" = "${BASH_SOURCE[0]}" ];then
     uninstall "$@"
 fi
