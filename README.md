@@ -36,7 +36,7 @@ These parts can optionally be installed to improve the experience for these doma
 
 For fuzzy searching of any kind fzf is required, such as for `:Files`/`<leader>e`.
 To also fuzzy search in file contents, install ripgrep and use `:Rg`/`<leader>r`.
-Finally, for showing file preview with syntax highlighting, install bat.
+Finally, for showing file previews with syntax highlighting, install bat.
 
 ### Python3
 
@@ -71,6 +71,13 @@ The packages mentioned above for Bash and Markdown tooling are highly recommende
 so be sure to set your npm prefix to a user writable place: `npm config set prefix $HOME/.local`.
 For linting, you can install the eslint npm package inside specific projects,
 be sure to check out my [eslint-config](https://github.com/Jelmerro/eslint-config) for it.
+
+### C/C++
+
+Syntax highlighting and suggestions are built into Vim by default,
+but linting, formatting and better autocomplete will be available by installing clangd.
+This is usually a part of the development package of clang, such as:
+`sudo dnf install clang-devel`
 
 # Features and usage
 
@@ -244,6 +251,7 @@ The referenced projects are covered by different licenses, check them out below.
 
 ## CoC extensions
 
+[coc-clangd](https://github.com/clangd/coc-clangd),
 [coc-css](https://github.com/neoclide/coc-css),
 [coc-eslint](https://github.com/neoclide/coc-eslint),
 [coc-git](https://github.com/neoclide/coc-git),

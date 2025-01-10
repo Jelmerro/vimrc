@@ -24,6 +24,7 @@ vim_plugins=(
 
 # coc plugin with extensions installed by npm into ~/.config/coc/extensions
 coc_packages=(
+    coc-clangd@latest
     coc-css@latest
     coc-eslint@latest
     coc-git@latest

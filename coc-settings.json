@@ -6,6 +6,7 @@
     "eslint.format.enable": true,
     "html.autoClosingTags": false,
     "html.autoCreateQuotes": false,
+    "inlayHint.enable": false,
     "javascript.format.enable": false,
     "javascript.validate.enable": true,
     "languageserver": {
@@ -22,9 +23,6 @@
         }
     },
     "pyright.disableDiagnostics": true,
-    "pyright.inlayHints.functionReturnTypes": false,
-    "pyright.inlayHints.variableTypes": false,
-    "pyright.inlayHints.parameterTypes": false,
     "python.linting.banditEnabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
