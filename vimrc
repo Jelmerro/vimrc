@@ -43,6 +43,8 @@ set incsearch
 set breakindent
 " show search numbers and shorten all file info messages
 set shortmess=Toat
+" adjust the terminal window title to Vim's custom title including the filename
+set title
 " highlight code snippets in markdown files
 let g:markdown_fenced_languages=['bash=sh', 'css', 'html', 'json', 'js=javascript', 'ts=typescript', 'python']
 " find matching tags in html/xml documents using matchit
