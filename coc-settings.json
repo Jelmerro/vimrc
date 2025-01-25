@@ -3,6 +3,7 @@
     "diagnostic.enableMessage": "never",
     "diagnostic.virtualTextFormat": "%source%code %message",
     "diagnostic.virtualTextCurrentLineOnly": false,
+    "eslint.experimental.useFlatConfig": true,
     "eslint.format.enable": true,
     "html.autoClosingTags": false,
     "html.autoCreateQuotes": false,
