@@ -226,7 +226,7 @@ The referenced projects are covered by different licenses, check them out below.
 ### Markdown
 
 [bash-language-server](https://github.com/mads-hartmann/bash-language-server),
-[instant-markdown-d](https://github.com/suan/instant-markdown-d)
+[instant-markdown-d](https://github.com/instant-markdown/instant-markdown-d)
 
 ### NodeJS
 
@@ -243,7 +243,7 @@ The referenced projects are covered by different licenses, check them out below.
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
 [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate),
-[suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown),
+[instant-markdown/vim-instant-markdown](https://github.com/instant-markdown/vim-instant-markdown),
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive),
 [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline),
