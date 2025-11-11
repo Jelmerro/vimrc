@@ -109,7 +109,7 @@ function! s:auto_format()
     " eslint is no longer exposed as a proper linter to coc
     if index(['js', 'jsx', 'javascript', 'javascriptreact', 'ts', 'typescript', 'typescriptcommon', 'typescriptreact'], &filetype) >= 0
         silent! call CocActionAsync('runCommand', 'eslint.executeAutofix')
-    elseif &filetype == 'json'
+    elseif index(['json', 'jsonc', 'json5'], &filetype) >= 0
         silent! call CocAction('format')
         silent! call CocActionAsync('runCommand', 'eslint.executeAutofix')
     else
