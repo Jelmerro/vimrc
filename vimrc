@@ -108,9 +108,12 @@ nmap <silent> gn <Plug>(coc-rename)
 function! s:auto_format()
     " eslint is no longer exposed as a proper linter to coc
     if index(['js', 'jsx', 'javascript', 'javascriptreact', 'ts', 'typescript', 'typescriptcommon', 'typescriptreact'], &filetype) >= 0
-        silent! CocCommand eslint.executeAutofix
+        silent! call CocActionAsync('runCommand', 'eslint.executeAutofix')
+    elseif &filetype == 'json'
+        silent! call CocAction('format')
+        silent! call CocActionAsync('runCommand', 'eslint.executeAutofix')
     else
-        call CocActionAsync('format')
+        silent! call CocActionAsync('format')
     endif
 endfunction
 noremap <silent> <leader>f :call <SID>auto_format()<cr>
