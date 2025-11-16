@@ -130,38 +130,9 @@ function! s:show_documentation()
     endif
 endfunction
 noremap <silent> K :call <SID>show_documentation()<cr>
-" scroll popup windows
-function s:find_cursor_popup(...)
-  let radius = 50
-  let srow = screenrow()
-  let scol = screencol()
-  for r in range(srow - radius, srow + radius)
-    for c in range(scol - radius, scol + radius)
-      let winid = popup_locate(r, c)
-      if winid != 0
-        return winid
-      endif
-    endfor
-  endfor
-  return 0
-endfunction
-function s:scroll_cursor_popup(down)
-  let winid = <SID>find_cursor_popup()
-  if winid == 0
-    return 0
-  endif
-  let pp = popup_getpos(winid)
-  call popup_setoptions(winid, {'firstline': pp.firstline + a:down})
-  return 1
-endfunction
-imap <expr> <C-f> <SID>scroll_cursor_popup(1) ? '' : ''
-imap <expr> <C-b> <SID>scroll_cursor_popup(-1) ? '' : ''
 " expand snippets, completion or copilot with tab key based on selection
 imap <silent> <S-Tab> <Nop>
-let g:copilot_no_tab_map = v:true
-inoremap <silent><expr> <Tab>
-      \ coc#pum#has_item_selected() ? coc#_select_confirm() :
-      \ exists('b:_copilot.suggestions') ? copilot#Accept("\<CR>") : ""
+inoremap <silent><expr> <Tab> coc#pum#has_item_selected() ? coc#_select_confirm() : ""
 " automatically fix diagnostics and/or refactor
 noremap <silent> <leader>d :CocList diagnostics<cr>
 nmap <leader>c <Plug>(coc-codeaction)
