@@ -118,7 +118,7 @@ setup() {
         echo '{"coc-eslint|global": {"eslintAlwaysAllowExecution": true}}' > memos.json
         cd ~/.config/coc/extensions || exit
         echo '{"dependencies":{}}' > package.json
-        npm --install-strategy nested --loglevel=error --force --only=prod --no-audit --no-fund i "${coc_packages[@]}"
+        npm --ignore-scripts --install-strategy nested --loglevel=error --force --only=prod --no-audit --no-fund i "${coc_packages[@]}"
     else
         subtitle "Skipping CoC installation because npm is missing"
     fi
