@@ -72,6 +72,9 @@ set spelllang=cjk,en,nl
 " exit to normal mode from terminal and other places with 'kj'
 tnoremap kj <C-\><C-n>
 inoremap kj <Esc>
+" Make Ctrl backspace and Alt backspace delete the last char in any terminal
+tmap <C-BS> <C-W>.
+tmap <A-BS> <C-W>.
 " toggle line wrap with shift-w
 set nowrap
 noremap <silent> W :set wrap!<cr>
