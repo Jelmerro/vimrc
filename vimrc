@@ -39,8 +39,12 @@ set wildmenu
 " show and highlight search results when typing
 set hlsearch
 set incsearch
+" count up to 1000 matches for search results
+set maxsearchcount=1000
 " indent wrapped lines the same as the start of the line
 set breakindent
+" prevent escape code pasting from terminal into buffer on startup
+set noxtermcodes
 " show search numbers and shorten all file info messages
 set shortmess=Toat
 " adjust the terminal window title to Vim's custom title including the filename
