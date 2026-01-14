@@ -93,6 +93,12 @@ nnoremap <leader>t za
 " disable search without the current search remaining active in the background
 nmap <silent> \ :let @/='$4'<cr>
 
+" Commands
+" Open the current file in Vieb's Markdown viewer
+command! MD call system("vieb " . shellescape("markdownviewer:" . expand("%:p")))
+" Open the current file in Vieb as-is
+command! VB call system("vieb " . shellescape(expand("%:p")))
+
 " Airline
 " always show airline as the statusline without showing the mode a second time
 set laststatus=2
@@ -160,16 +166,6 @@ let g:fzf_colors =
 nnoremap <leader>r :Rg<cr>
 nnoremap <leader>e :Files<cr>
 nnoremap <leader>b :Buffers<cr>
-
-" Instant Markdown
-" disable autostart when opening a file
-let g:instant_markdown_autostart=0
-" Add a single startup command that also can also restart
-function! s:markdown_preview()
-    silent! InstantMarkdownStop
-    silent! InstantMarkdownPreview
-endfunction
-command! MD call s:markdown_preview()
 
 " One theme
 " enable gui colors and italics, which look nicer if supported

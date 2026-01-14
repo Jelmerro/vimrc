@@ -15,7 +15,6 @@ vim_plugins=(
     mbbill/undotree
     pangloss/vim-javascript
     RRethy/vim-illuminate
-    instant-markdown/vim-instant-markdown
     tomtom/tcomment_vim
     tpope/vim-fugitive
     vim-airline/vim-airline

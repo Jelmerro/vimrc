@@ -59,15 +59,15 @@ This package can be installed via npm using `npm i -g bash-language-server@lates
 ### Markdown
 
 Markdown highlighting and suggestions are supported by the base install,
-but web previews via `:MD` are provided by the NodeJS-driven LSP `instant-markdown-d`.
-This package can be installed via npm using `npm i -g instant-markdown-d@latest`.
+but web previews via `:MD` are provided by [Vieb](https://vieb.dev)'s internal Markdown viewer.
+To merely open the current file in Vieb as-is, use `:VB` instead.
 
 ### NodeJS
 
 While NodeJS itself is recommended to install CoC's LSP plugins to `~/.config/coc`,
 it is not strictly required by the install script to use this vimrc config.
 If npm is not found, LSP plugins are skipped as is the CoC package installation.
-The packages mentioned above for Bash and Markdown tooling are highly recommended,
+The package mentioned above for Bash tooling is highly recommended,
 so be sure to set your npm prefix to a user writable place: `npm config set prefix $HOME/.local`.
 For linting, you can install the eslint npm package inside specific projects,
 be sure to check out my [eslint-config](https://github.com/Jelmerro/eslint-config) for it.
@@ -155,11 +155,6 @@ Outside of insert mode you can use `<<` and `>>` to do the same thing.
 
 - Automatically highlights the same words in a relatively light gray color
 
-### Instant Markdown
-
-- The preview won't open automatically
-- Open the preview with the custom :MD command
-
 ### Vim One
 
 - Theme for code, FZF sub-windows, the statusline, the tabs and even terminals
@@ -220,13 +215,9 @@ The referenced projects are covered by different licenses, check them out below.
 
 ### Bash
 
+[bash-language-server](https://github.com/mads-hartmann/bash-language-server),
 [shellcheck](https://github.com/koalaman/shellcheck),
 [shfmt](https://github.com/mvdan/sh)
-
-### Markdown
-
-[bash-language-server](https://github.com/mads-hartmann/bash-language-server),
-[instant-markdown-d](https://github.com/instant-markdown/instant-markdown-d)
 
 ### NodeJS
 
@@ -243,7 +234,6 @@ The referenced projects are covered by different licenses, check them out below.
 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim),
 [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript),
 [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate),
-[instant-markdown/vim-instant-markdown](https://github.com/instant-markdown/vim-instant-markdown),
 [tomtom/tcomment\_vim](https://github.com/tomtom/tcomment_vim),
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive),
 [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline),
