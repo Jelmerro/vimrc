@@ -79,9 +79,10 @@ inoremap kj <Esc>
 " Make Ctrl backspace and Alt backspace delete the last char in any terminal
 tmap <C-BS> <C-W>.
 tmap <A-BS> <C-W>.
-" Have shifted space and enter do the tergular thing in any terminal
+" Have space and enter with modifiers do the regular thing in any terminal
 tmap <S-Space> <Space>
 tmap <S-Enter> <Enter>
+tmap <C-Enter> <Enter>
 " toggle line wrap with shift-w
 set nowrap
 noremap <silent> W :set wrap!<cr>
