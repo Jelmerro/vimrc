@@ -51,7 +51,8 @@ such as `sudo dnf install python3-pylint` or `pip install --user flake8`.
 
 Basic highlighting and suggestions are supported by the base install,
 but linting and formatting is provided via the NodeJS-driven LSP `bash-language-server`.
-This package can be installed via npm using `npm i -g bash-language-server@latest`.
+This package can be installed via npm using `npm i -g bash-language-server@latest`,
+or by using `sudo dnf install nodejs-bash-language-server`.
 
 - ShellCheck (shellcheck) - for linting sh/bash files (requires NodeJS for LSP)
 - shfmt - for formatting sh/bashf files (requires NodeJS for LSP)
@@ -67,8 +68,7 @@ To merely open the current file in Vieb as-is, use `:VB` instead.
 While NodeJS itself is recommended to install CoC's LSP plugins to `~/.config/coc`,
 it is not strictly required by the install script to use this vimrc config.
 If npm is not found, LSP plugins are skipped as is the CoC package installation.
-The package mentioned above for Bash tooling is highly recommended,
-so be sure to set your npm prefix to a user writable place: `npm config set prefix $HOME/.local`.
+You can supply 'no-lsp' to skip this step even if npm is installed.
 For linting, you can install the eslint npm package inside specific projects,
 be sure to check out my [eslint-config](https://github.com/Jelmerro/eslint-config) for it.
 
